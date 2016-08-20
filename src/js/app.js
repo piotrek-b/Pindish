@@ -3,7 +3,7 @@ var app = angular.module('pindish', []);
 
 app.directive('navigationBar', function() {
   return {
-    restrict : 'E',
+    restrict : 'A',
     templateUrl : 'navigation.xhtml'
   };
 });
