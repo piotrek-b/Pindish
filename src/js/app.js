@@ -1,5 +1,2 @@
-(function(){
-  // Module initialization
-  var app = angular.module('pindish', []);
-
-})();
+// Module initialization
+var app = angular.module('pindish', []);
