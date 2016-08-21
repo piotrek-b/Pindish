@@ -1,9 +1,15 @@
 // Module initialization
-var app = angular.module('pindish', []);
+angular.module('pindish', ['ngDialog'])
 
-app.directive('navigationBar', function() {
+.directive('navigationBar', function() {
   return {
     restrict : 'A',
     templateUrl : 'navigation.xhtml'
   };
-});
+})
+
+.controller('dialogController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
+  $scope.clickToOpen = function() {
+    ngDialog.open({ template: 'popupTml.xhtml', className: 'ngdialog-theme-default' });
+  };
+}]);
