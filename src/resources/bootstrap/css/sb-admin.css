@@ -225,3 +225,44 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+h1.page-header {
+    text-align: center;
+}
+
+.container-fluid {
+    background-color: rgb(236, 236, 236);
+    height: auto;
+    position: relative;
+}
+
+.recipe-card {
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+    padding: 0px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 10px 6px -6px #777;
+    overflow: hidden;
+}
+
+.recipe-card > img {
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.recipe-card > h3 {
+    margin: auto;
+    padding: 10px 0px 10px 0px;
+    font-weigth: bold;
+    text-align: center;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.recipe-card > p {
+    position: relative;
+    padding: 10px;
+}
