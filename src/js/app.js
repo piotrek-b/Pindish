@@ -73,6 +73,7 @@ angular.module('pindish', ['ngDialog'])
 
   $scope.addRecipeExtPopup = function() {
       ngDialog.open({ template: 'addNewRecipeExtTml.xhtml', className: 'ngdialog-theme-default' });
+  };
 
   $scope.emptyRecipes = function () {
     return $scope.recipesSix.length === 0;
