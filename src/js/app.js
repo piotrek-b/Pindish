@@ -41,6 +41,11 @@ angular.module('pindish', ['ngDialog'])
   $scope.clickToOpen = function() {
     ngDialog.open({ template: 'popupTml.xhtml', className: 'ngdialog-theme-default' });
   };
+
+  $scope.addRecipePopup = function() {
+    ngDialog.open({ template: 'addNewRecipeTml.xhtml', className: 'ngdialog-theme-default' });
+  };
+
   $.getJSON('../json/recipes.json', function( data ) {
     console.log(data);
     $scope.recipes =  data;
