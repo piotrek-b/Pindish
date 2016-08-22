@@ -231,10 +231,6 @@ ul.alert-dropdown {
     color: #df8a13;
 }
 
-h1.page-header {
-    text-align: center;
-}
-
 .container-fluid {
     background-color: rgb(236, 236, 236);
     height: auto;
@@ -262,7 +258,7 @@ h1.page-header {
     margin: auto;
     padding: 10px 0px 10px 0px;
     font-weigth: bold;
-    text-align: center;
+    padding: 10px;
     border-bottom: 1px solid rgb(236, 236, 236);
 }
 
