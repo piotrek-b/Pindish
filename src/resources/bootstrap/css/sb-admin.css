@@ -21,6 +21,11 @@ body {
     padding-left: 0;
 }
 
+.move-text {
+  position: absolute;
+  margin-left: 23%;
+}
+
 #page-wrapper {
     width: 100%;
     padding: 0;

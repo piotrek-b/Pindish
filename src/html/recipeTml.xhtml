@@ -1,5 +1,5 @@
 <div id="recipe-book">
-    <div data-ng-repeat="sixArray in recipesSix">
+    <div data-ng-hide="emptyRecipes()" data-ng-repeat="sixArray in recipesSix">
         <div class="row">
 
             <div data-ng-repeat="recipe in sixArray">
@@ -22,5 +22,11 @@
 
         </div>
         <!-- /.row -->
+    </div>
+
+    <div data-ng-show="emptyRecipes()">
+      <h1 class="page-header">
+        None recipes with that name.
+      </h1>
     </div>
 </div>
