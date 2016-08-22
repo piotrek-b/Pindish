@@ -3,12 +3,19 @@
   <div data-ng-repeat="sixArray in recipesSix">
     <div class="row">
     <div data-ng-repeat="recipe in sixArray">
-          <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-              <img data-ng-src="{{ recipe.link }}" alt="" />
-              <h3 class="recipe-name">{{ recipe.name }}</h3>
-              <p>{{ recipe.description }}
-              </p>
+          <div class=" col-lg-2" data-ng-click="clickToOpen()">
+            <div class="panel panel-default">
+              <div class="recipe-card">
+                <img data-ng-src="{{ recipe.link }}" alt="" />
+                <h3 class="recipe-name">{{ recipe.name }}</h3>
+                <p>{{ recipe.description }}
+                </p>
+              </div>
+              <!-- /.recipe-card -->
+            </div>
+            <!-- /.panel .panel-defaultr -->
           </div>
+          <!-- /.col-lg-2 -->
     </div>
   </div>
   </div>

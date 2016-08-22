@@ -239,7 +239,6 @@ h1.page-header {
 .recipe-card {
     display: inline-block;
     position: relative;
-    margin: 20px;
     padding: 0px;
     background-color: #ffffff;
     border-radius: 5px;

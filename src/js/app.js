@@ -1,4 +1,33 @@
 // Module initialization
+var parseRecipesFromJson = function (data) {
+  var recipesInRow = 6;
+  //Making parts from data
+  var len = data.length;
+  var countBy = Math.ceil(len / recipesInRow);
+
+  var sixArray = new Array(countBy);
+
+  for (var i = 0; i < countBy-1; i++) {
+      sixArray[i] = new Array(recipesInRow);
+  }
+  //add last row
+  if(len % recipesInRow === 0) {
+    sixArray[countBy-1] = new Array(recipesInRow);
+  } else {
+    sixArray[countBy-1] = new Array(len % recipesInRow);
+  }
+
+  //now we put data into arrays
+  for (i = 0; i < len; i++) {
+    console.log(countBy);
+    var x = Math.floor(i / recipesInRow);
+    var y = i % recipesInRow;
+    sixArray[x][y] = data[i];
+  }
+
+  return sixArray;
+};
+
 angular.module('pindish', ['ngDialog'])
 
 .directive('navigationBar', function() {
@@ -15,32 +44,8 @@ angular.module('pindish', ['ngDialog'])
   $.getJSON('../json/recipes.json', function( data ) {
     console.log(data);
     $scope.recipes =  data;
-    //Making parts from data
-    var len = data.length;
-    var countByFive = Math.ceil(len / 5);
 
-    var sixArray = new Array(countByFive);
-
-    for (var i = 0; i < countByFive-1; i++) {
-        sixArray[i] = new Array(5);
-    }
-    //add last row
-    if(len % 5 === 0) {
-      sixArray[countByFive-1] = new Array(5);
-    } else {
-      sixArray[countByFive-1] = new Array(len % 5);
-    }
-
-    //now we put data into arrays
-    for (i = 0; i < len; i++) {
-      console.log(countByFive);
-      var x = Math.floor(i / 5);
-      var y = i % 5;
-      sixArray[x][y] = data[i];
-    }
-
-    $scope.recipesSix = sixArray;
-
+    $scope.recipesSix = parseRecipesFromJson(data);
   });
 
   var countRecipes = 0;

@@ -33,5 +33,10 @@
 		"link" : "../images/test-meal-3.jpg",
 		"name" : "Some recipe with a long long desc",
 		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"link" : "../images/test-meal-4.jpg",
+		"name" : "Some recipe with a long long desc",
+		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 	}
 ]
