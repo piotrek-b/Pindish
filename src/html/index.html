@@ -48,68 +48,9 @@
                         <h1 class="page-header">
                             Your recipes <button type="button" class="btn btn-lg btn-info" data-ng-click="clickToOpen()">Click Me!</button>
                         </h1>
-                        <div id="recipe-book">
-                            <div class="row">
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-1.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-2.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-3.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-4.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-1.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-2.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-3.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                                <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-                                    <img src="../images/test-meal-4.jpg" alt="" />
-                                    <h3 class="recipe-name">Some recipe with a long long desc</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+
+                        <div recipes-directive></div>
+
                     </div>
                 </div>
                 <!-- /.row -->
@@ -122,15 +63,15 @@
 
     </div>
     <!-- /#wrapper -->
-
+    <!-- jQuery -->
+    <script src="../resources/bootstrap/js/jquery.js"></script>
     <!-- AngularJS -->
     <script src="../resources/angular-1.5.8/angular.js"></script>
 
     <!-- ngDialog -->
     <script src="../resources/node_modules/ng-dialog/js/ngDialog.js"></script>
 
-    <!-- jQuery -->
-    <script src="../resources/bootstrap/js/jquery.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
