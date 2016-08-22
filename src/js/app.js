@@ -49,6 +49,6 @@ angular.module('pindish', ['ngDialog'])
 .directive('recipesDirective', function() {
   return {
     restrict : 'A',
-    templateUrl : 'recipeTml.html'
+    templateUrl : 'recipeTml.xhtml'
   };
 })
