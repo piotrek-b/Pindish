@@ -1,22 +1,22 @@
 [
 	{
 		"link" : "../images/test-meal-1.jpg",
-		"name" : "Some recipe with a long long desc",
+		"name" : "Tater Tot Taco Casserole",
 		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 	},
 	{
 		"link" : "../images/test-meal-2.jpg",
-		"name" : "Some recipe with a long long desc",
+		"name" : "Chinese Roast Pork",
 		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 	},
 	{
 		"link" : "../images/test-meal-3.jpg",
-		"name" : "Some recipe with a long long desc",
+		"name" : "Juicy Marinated Steaks",
 		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 	},
 	{
 		"link" : "../images/test-meal-4.jpg",
-		"name" : "Some recipe with a long long desc",
+		"name" : "Chilli con carne",
 		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 	},
 	{
