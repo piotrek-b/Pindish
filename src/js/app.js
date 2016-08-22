@@ -25,14 +25,14 @@ angular.module('pindish', ['ngDialog'])
         sixArray[i] = new Array(5);
     }
     //add last row
-    if(len % 5 == 0) {
+    if(len % 5 === 0) {
       sixArray[countByFive-1] = new Array(5);
     } else {
       sixArray[countByFive-1] = new Array(len % 5);
     }
 
     //now we put data into arrays
-    for (var i = 0; i < len; i++) {
+    for (i = 0; i < len; i++) {
       console.log(countByFive);
       var x = Math.floor(i / 5);
       var y = i % 5;
@@ -49,7 +49,6 @@ angular.module('pindish', ['ngDialog'])
 .directive('recipesDirective', function() {
   return {
     restrict : 'A',
-    templateUrl : 'recipeTml.html',
-
+    templateUrl : 'recipeTml.html'
   };
 })

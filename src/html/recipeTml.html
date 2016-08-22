@@ -1,10 +1,10 @@
 <div id="recipe-book">
 
-  <div ng-repeat="sixArray in recipesSix">
+  <div data-ng-repeat="sixArray in recipesSix">
     <div class="row">
-    <div ng-repeat="recipe in sixArray">
+    <div data-ng-repeat="recipe in sixArray">
           <div class="recipe-card col-lg-2" data-ng-click="clickToOpen()">
-              <img ng-src="{{ recipe.link }}" alt="" />
+              <img data-ng-src="{{ recipe.link }}" alt="" />
               <h3 class="recipe-name">{{ recipe.name }}</h3>
               <p>{{ recipe.description }}
               </p>
