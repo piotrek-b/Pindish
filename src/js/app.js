@@ -1,5 +1,7 @@
 // Module initialization
 var filterJsonByName = function(data, filter) {
+  filter = filter.toLowerCase();
+
   var newData = [];
   console.log(data);
   var len = data.length;
