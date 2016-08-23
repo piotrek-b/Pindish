@@ -52,10 +52,25 @@
                      </div>
                    </div>
 
-                   <div class="col-lg-10">
+                   <div class="col-lg-8">
                        <h1 class="move-text page-header">
                            Your recipes <button type="button" class="btn btn-lg btn-info" data-ng-click="addRecipePopup()">Click Me!</button>
                        </h1>
+                   </div>
+
+                   <div class="page-header col-lg-2">
+                     <div class="form-group">
+                       <button type="button" class="btn btn-info btn-block" data-ng-click="changeNameSort()">
+                         <b style="float: left">Alphabetic</b>
+                         <span class="glyphicon" data-ng-class="changeNameSortArrow()" style="float: right;"></span>
+                       </button>
+                     </div>
+                     <!--<div class="form-group">
+                       <button type="button" class="btn btn-info btn-block">
+                         <b style="float: left">Data</b>
+                         <span class="glyphicon glyphicon-triangle-right" style="float: right;"></span>
+                       </button>
+                     </div>-->
                    </div>
                    <div class="col-lg-12">
                        <div data-recipes-directive></div>
@@ -80,12 +95,11 @@
     <!-- ngDialog -->
     <script src="../resources/node_modules/ng-dialog/js/ngDialog.js"></script>
 
-
-
     <!-- Bootstrap Core JavaScript -->
     <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Our Main AngularJS Module -->
+    <script src="../js/recipeFilterSort.js"></script>
     <script src="../js/app.js"></script>
 </body>
 
