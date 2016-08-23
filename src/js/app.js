@@ -58,8 +58,21 @@ angular.module('pindish', ['ngDialog'])
 })
 
 .controller('dialogController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
+
   $scope.clickToOpen = function() {
     ngDialog.open({ template: 'popupTml.xhtml', className: 'ngdialog-theme-default' });
+  };
+
+  $scope.closePopup = function() {
+      ngDialog.close();
+  }
+
+  $scope.addRecipePopup = function() {
+    ngDialog.open({ template: 'addNewRecipeTml.xhtml', className: 'ngdialog-theme-default' });
+  };
+
+  $scope.addRecipeExtPopup = function() {
+      ngDialog.open({ template: 'addNewRecipeExtTml.xhtml', className: 'ngdialog-theme-default' });
   };
 
   $scope.emptyRecipes = function () {

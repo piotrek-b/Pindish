@@ -1,0 +1,18 @@
+<h3 class="text-center"><strong>Add New Recipe</strong></h3>
+<div class="form-group">
+    <label>Recipe title:</label>
+    <input class="form-control"  data-ng-model="recipeLink" placeholder="Title..." />
+</div>
+<!-- /.form-group -->
+<div class="form-group">
+    <label>Recipe description:</label>
+    <textarea class="form-control" rows="3" data-ng-model="recipeDesc"> <textarea />
+</div>
+<!-- /.form-group -->
+<div class="form-group">
+    <label>Recipe image:</label>
+    <input type="file" data-ng-model="recipeImg" />
+</div>
+<!-- /.form-group -->
+<button type="button" class="btn btn-lg btn-primary" data-ng-controller="dialogController" data-ng-click="closePopup()"
+data-ng-disabled="!recipeTitle.length &&!recipeDesc.length">Add</button>
