@@ -1,106 +1,86 @@
-// Module initialization
-var filterJsonByName = function(data, filter) {
-  filter = filter.toLowerCase();
-
-  var newData = [];
-  console.log(data);
-  var len = data.length;
-
-  for(var i = 0; i < len; i++) {
-    //we check if filter is within a name of recipe
-    if(data[i].name.toLowerCase().indexOf(filter) !== -1) {
-      newData.push(data[i]);
-      console.log(data[i]);
-    }
-  }
-  console.log(newData.length);
-  return newData;
-}
-
-var parseRecipesFromJson = function (data, filter) {
-  //filter data
-  data = filterJsonByName(data, filter);
-
-  var recipesInRow = 6;
-  //Making parts from data
-  var len = data.length;
-  var countBy = Math.ceil(len / recipesInRow);
-
-  var sixArray = new Array(countBy);
-
-  for (var i = 0; i < countBy-1; i++) {
-      sixArray[i] = new Array(recipesInRow);
-  }
-  //add last row
-  if(len % recipesInRow === 0) {
-    sixArray[countBy-1] = new Array(recipesInRow);
-  } else {
-    sixArray[countBy-1] = new Array(len % recipesInRow);
-  }
-
-  //now we put data into arrays
-  for (i = 0; i < len; i++) {
-    var x = Math.floor(i / recipesInRow);
-    var y = i % recipesInRow;
-    sixArray[x][y] = data[i];
-  }
-
-  return sixArray;
-};
-
 angular.module('pindish', ['ngDialog'])
 
 .directive('navigationBar', function() {
-  return {
-    restrict : 'A',
-    templateUrl : 'navigation.xhtml'
-  };
+    return {
+        restrict: 'A',
+        templateUrl: 'navigation.xhtml'
+    };
 })
 
-.controller('dialogController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
+.controller('dialogController', ['$scope', 'ngDialog', function($scope, ngDialog) {
 
-  $scope.clickToOpen = function() {
-    ngDialog.open({ template: 'popupTml.xhtml', className: 'ngdialog-theme-default' });
-  };
+    $scope.clickToOpen = function() {
+        ngDialog.open({
+            template: 'popupTml.xhtml',
+            className: 'ngdialog-theme-default'
+        });
+    };
 
-  $scope.closePopup = function() {
-      ngDialog.close();
-  }
+    $scope.closePopup = function() {
+        ngDialog.close();
+    }
 
-  $scope.addRecipePopup = function() {
-    ngDialog.open({ template: 'addNewRecipeTml.xhtml', className: 'ngdialog-theme-default' });
-  };
+    $scope.addRecipePopup = function() {
+        ngDialog.open({
+            template: 'addNewRecipeTml.xhtml',
+            className: 'ngdialog-theme-default'
+        });
+    };
 
-  $scope.addRecipeExtPopup = function() {
-      ngDialog.open({ template: 'addNewRecipeExtTml.xhtml', className: 'ngdialog-theme-default' });
-  };
+    $scope.addRecipeExtPopup = function() {
+        ngDialog.open({
+            template: 'addNewRecipeExtTml.xhtml',
+            className: 'ngdialog-theme-default'
+        });
+    };
 
-  $scope.emptyRecipes = function () {
-    return $scope.recipesSix.length === 0;
-  };
+    $scope.emptyRecipes = function() {
+        return $scope.recipesSix.length === 0;
+    };
 
-  $.getJSON('../json/recipes.json', function( data ) {
-    console.log(data);
-    $scope.recipes =  data;
+    $scope.changeNameSort = function() {
+        $scope.nameSort = ($scope.nameSort + 1) % 3;
+    }
 
-    $scope.recipesSix = parseRecipesFromJson(data, "");
-  });
+    $scope.changeNameSortArrow = function() {
+        if ($scope.nameSort === 0) {
+            return "glyphicon-triangle-right";
+        } else if ($scope.nameSort === 1) {
+            return "glyphicon-triangle-bottom";
+        } else {
+            return "glyphicon-triangle-top";
+        }
+    }
 
-  //name in filter
-  $scope.filterName = "";
+    $.getJSON('../json/recipes.json', function(dataJson) {
+        $scope.recipes = dataJson;
 
-  var countRecipes = 0;
+        $scope.recipesSix = parseRecipesFromJson(dataJson, "", 0);
+    });
+
+    //Data filter/sort options
+    $scope.filterName = "";
+    $scope.nameSort = 0; //0 - defualt, 1 - a->z , 2 z->a
+
+    var countRecipes = 0;
 }])
 
 .directive('recipesDirective', function() {
-  return {
-    restrict: 'A',
-    templateUrl: 'recipeTml.xhtml',
-    link: function($scope, element, attrs) {
-      $scope.$watch('filterName', function(newVal, oldVal){
-        //filter Json
-        $scope.recipesSix = parseRecipesFromJson($scope.recipes, newVal);
-      });
-    }
-  };
+    return {
+        restrict: 'A',
+        templateUrl: 'recipeTml.xhtml',
+        link: function($scope, element, attrs) {
+            $scope.$watch('filterName', function(newVal, oldVal) {
+                //filter Json
+                if (newVal !== oldVal)
+                    $scope.recipesSix = parseRecipesFromJson($scope.recipes, newVal, $scope.nameSort);
+            });
+
+            $scope.$watch('nameSort', function(newVal, oldVal) {
+                //filter Json
+                if (newVal !== oldVal)
+                    $scope.recipesSix = parseRecipesFromJson($scope.recipes, $scope.filterName, newVal);
+            });
+        }
+    };
 })
