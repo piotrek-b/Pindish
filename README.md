@@ -4,6 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/rjiuk3566/Pindish/badges/gpa.svg)](https://codeclimate.com/github/rjiuk3566/Pindish)
 
 Keep your recipes organized with **Pindish**.
+
 Pindish helps you, by preventing you from drowning in the sea of bookmarks with cooking recipes.
 
 Its functionality is simplicity at its finest. After you create an account, you are given an opportunity to parse link of cooking recipe from various internet pages (which will be listed in the near future), and parse it exactly to your personal cookbook. Of course, you can create your own recipes as well.
