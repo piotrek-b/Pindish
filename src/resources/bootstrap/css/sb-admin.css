@@ -47,6 +47,12 @@ body {
     }
 }
 
+.icon-size {
+  width: 32px;
+  heigth: 32px;
+
+}
+
 .filter-position {
   width: 15%;
   height: 120%;
