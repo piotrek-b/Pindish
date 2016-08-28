@@ -1,35 +1,31 @@
-<div class="container-fluid" data-ng-module="pindish">
+<div class="container-fluid" data-ng-module="pindish" data-ng-controller="dialogController">
 
     <!-- Page Heading -->
-    <div class="row" data-ng-controller="dialogController">
+    <div class="row">
 
-        <!-- name-filter -->
-        <div class="page-header col-lg-2">
-            <div class="form-group">
-                <input type="text" data-ng-model="filterName" placeholder="Filter by name" />
-            </div>
-        </div>
+        <div class="col-lg-10">
+          <img src="../images/logo.png"/ class="pull-left">
+            <h1 class="page-header" style="margin-left: 50%;">
 
-        <div class="col-lg-8">
-            <h1 class="move-text page-header">
-               Your recipes <button type="button" class="btn btn-lg btn-info" data-ng-click="addRecipePopup()">Click Me!</button>
+               Your recipes
+               <!--
+                <button type="button" class="btn btn-lg btn-info" data-ng-click="addRecipePopup()">Click Me!</button>
+              -->
            </h1>
         </div>
 
-        <div class="page-header col-lg-2">
-            <div class="form-group">
-                <button type="button" class="btn btn-info btn-block" data-ng-click="changeNameSort()">
-                    <b style="float: left">Alphabetic</b>
-                    <span class="glyphicon" data-ng-class="changeNameSortArrow()" style="float: right;"></span>
-                </button>
+        <div class="filter-position pull-right">
+            <div class="well">
+                    <button type="button" class="btn btn-color filter-element" data-ng-click="changeNameSort()">
+                        <b style="float: left">Alphabetic</b>
+                        <span class="glyphicon" data-ng-class="changeNameSortArrow()" style="float: right;"></span>
+                    </button></br></br>
+                    <input type="text" class="filter-element" data-ng-model="filterName" placeholder="Filter by name" />
             </div>
-            <!--<div class="form-group">
-           <button type="button" class="btn btn-info btn-block">
-             <b style="float: left">Data</b>
-             <span class="glyphicon glyphicon-triangle-right" style="float: right;"></span>
-           </button>
-         </div>-->
         </div>
+
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <div data-recipes-directive></div>
 
