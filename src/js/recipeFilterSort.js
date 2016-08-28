@@ -1,8 +1,8 @@
 // Module initialization
-var TYPES_OF_SORTING =  {
-  NO_SORTING:  0,
-  DECREASING: 1,
-  INCREASING: 2
+var TYPES_OF_SORTING = {
+    NO_SORTING: 0,
+    DECREASING: 1,
+    INCREASING: 2
 };
 
 var sortRecipes = function(recipes, typeOfSorting) {
@@ -38,15 +38,7 @@ var filterAndSortRecipes = function(recipes, filterForTitle, typeOfSorting) {
     return filteredRecipes;
 };
 
-var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSorting) {
-    var cloneOfRecipes = JSON.parse(JSON.stringify(recipes));
-
-    var filteredAndSortedRecipes = filterAndSortRecipes(cloneOfRecipes, filterForTitle, typeOfSorting);
-
-    var recipesInRow = 6;
-
-    //Making parts from data
-    var numberOfRecipes = filteredAndSortedRecipes.length;
+var createEmptyTableForRecipes = function(numberOfRecipes, recipesInRow) {
     var numberOfRows = Math.ceil(numberOfRecipes / recipesInRow);
 
     var tableWithRecipes = new Array(numberOfRows);
@@ -60,6 +52,21 @@ var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSortin
     } else {
         tableWithRecipes[numberOfRows - 1] = new Array(numberOfRows % recipesInRow);
     }
+
+    return tableWithRecipes;
+};
+
+var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSorting) {
+    var cloneOfRecipes = JSON.parse(JSON.stringify(recipes));
+
+    var filteredAndSortedRecipes = filterAndSortRecipes(cloneOfRecipes, filterForTitle, typeOfSorting);
+
+    var recipesInRow = 6;
+
+    //Making parts from data
+    var numberOfRecipes = filteredAndSortedRecipes.length;
+
+    var tableWithRecipes = createEmptyTableForRecipes(numberOfRecipes, recipesInRow);
 
     //now we put data into arrays
     for (var ithRecipe = 0; ithRecipe < numberOfRecipes; ithRecipe++) {
