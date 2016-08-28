@@ -3,7 +3,7 @@ var TYPES_OF_SORTING =  {
   NO_SORTING:  0,
   DECREASING: 1,
   INCREASING: 2
-}
+};
 
 var sortRecipes = function(recipes, typeOfSorting) {
     if (typeOfSorting === TYPES_OF_SORTING.NO_SORTING) {
@@ -36,7 +36,7 @@ var filterAndSortRecipes = function(recipes, filterForTitle, typeOfSorting) {
         }
     }
     return filteredRecipes;
-}
+};
 
 var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSorting) {
     var cloneOfRecipes = JSON.parse(JSON.stringify(recipes));
@@ -62,7 +62,7 @@ var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSortin
     }
 
     //now we put data into arrays
-    for (ithRecipe = 0; ithRecipe < numberOfRecipes; ithRecipe++) {
+    for (var ithRecipe = 0; ithRecipe < numberOfRecipes; ithRecipe++) {
         var row = Math.floor(ithRecipe / recipesInRow);
         var column = ithRecipe % recipesInRow;
         tableWithRecipes[row][column] = filteredAndSortedRecipes[ithRecipe];
