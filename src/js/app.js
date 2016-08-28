@@ -14,6 +14,13 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
     };
 })
 
+.directive('footerBar', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'footer.xhtml'
+    };
+})
+
 .controller('dialogController', ['$scope', 'ngDialog', function($scope, ngDialog) {
 
     $scope.clickToOpen = function() {
