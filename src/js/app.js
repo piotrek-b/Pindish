@@ -55,7 +55,7 @@ angular.module('pindish', ['ngDialog'])
     $.getJSON('../json/recipes.json', function(dataJson) {
         $scope.recipes = dataJson;
 
-        $scope.recipesSix = parseRecipesFromJson(dataJson, "", 0);
+        $scope.recipesSix = diveRecipesIntoRowAndFilter(dataJson, "", 0);
     });
 
     //Data filter/sort options
@@ -73,13 +73,13 @@ angular.module('pindish', ['ngDialog'])
             $scope.$watch('filterName', function(newVal, oldVal) {
                 //filter Json
                 if (newVal !== oldVal)
-                    $scope.recipesSix = parseRecipesFromJson($scope.recipes, newVal, $scope.nameSort);
+                    $scope.recipesSix = diveRecipesIntoRowAndFilter($scope.recipes, newVal, $scope.nameSort);
             });
 
             $scope.$watch('nameSort', function(newVal, oldVal) {
                 //filter Json
                 if (newVal !== oldVal)
-                    $scope.recipesSix = parseRecipesFromJson($scope.recipes, $scope.filterName, newVal);
+                    $scope.recipesSix = diveRecipesIntoRowAndFilter($scope.recipes, $scope.filterName, newVal);
             });
         }
     };

@@ -1,65 +1,72 @@
 // Module initialization
-var sortData = function(data, name) {
-    if (name === 0) {
-        return data;
+var TYPES_OF_SORTING =  {
+  NO_SORTING:  0,
+  DECREASING: 1,
+  INCREASING: 2
+}
+
+var sortRecipes = function(recipes, typeOfSorting) {
+    if (typeOfSorting === TYPES_OF_SORTING.NO_SORTING) {
+        return recipes;
     }
 
-    var newData = data.sort(function(recipeA, recipeB) {
-        if (name === 1) {
+    var sortedRecipes = recipes.sort(function(recipeA, recipeB) {
+        if (typeOfSorting === TYPES_OF_SORTING.DECREASING) {
             return recipeA.name.toLowerCase() > recipeB.name.toLowerCase() ? 1 : -1;
         } else {
             return recipeA.name.toLowerCase() < recipeB.name.toLowerCase() ? 1 : -1;
         }
     });
 
-    return newData;
+    return sortedRecipes;
 }
 
-var filterAndSortData = function(data, filter, name) {
-    data = sortData(data, name);
+var filterAndSortRecipes = function(recipes, filterForTitle, typeOfSorting) {
+    recipes = sortRecipes(recipes, typeOfSorting);
 
-    filter = filter.toLowerCase();
+    filterForTitle = filterForTitle.toLowerCase();
 
-    var newData = [];
-    var len = data.length;
+    var filteredRecipes = [];
+    var numberOfRecipes = recipes.length;
 
-    for (var i = 0; i < len; i++) {
+    for (var ithRecipe = 0; ithRecipe < numberOfRecipes; ithRecipe++) {
         //we check if filter is within a name of recipe
-        if (data[i].name.toLowerCase().indexOf(filter) !== -1) {
-            newData.push(data[i]);
+        if (recipes[ithRecipe].name.toLowerCase().indexOf(filterForTitle) !== -1) {
+            filteredRecipes.push(recipes[ithRecipe]);
         }
     }
-    return newData;
+    return filteredRecipes;
 }
 
-var parseRecipesFromJson = function(tempData, filter, name) {
-    var cloneTempData = JSON.parse(JSON.stringify(tempData));
+var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSorting) {
+    var cloneOfRecipes = JSON.parse(JSON.stringify(recipes));
 
-    var data = filterAndSortData(cloneTempData, filter, name);
+    var filteredAndSortedRecipes = filterAndSortRecipes(cloneOfRecipes, filterForTitle, typeOfSorting);
 
     var recipesInRow = 6;
+
     //Making parts from data
-    var len = data.length;
-    var countBy = Math.ceil(len / recipesInRow);
+    var numberOfRecipes = filteredAndSortedRecipes.length;
+    var numberOfRows = Math.ceil(numberOfRecipes / recipesInRow);
 
-    var sixArray = new Array(countBy);
+    var tableWithRecipes = new Array(numberOfRows);
 
-    for (var i = 0; i < countBy - 1; i++) {
-        sixArray[i] = new Array(recipesInRow);
+    for (var i = 0; i < numberOfRows - 1; i++) {
+        tableWithRecipes[i] = new Array(recipesInRow);
     }
     //add last row
-    if (len % recipesInRow === 0) {
-        sixArray[countBy - 1] = new Array(recipesInRow);
+    if (numberOfRecipes % recipesInRow === 0) {
+        tableWithRecipes[numberOfRows - 1] = new Array(recipesInRow);
     } else {
-        sixArray[countBy - 1] = new Array(len % recipesInRow);
+        tableWithRecipes[numberOfRows - 1] = new Array(numberOfRows % recipesInRow);
     }
 
     //now we put data into arrays
-    for (i = 0; i < len; i++) {
-        var x = Math.floor(i / recipesInRow);
-        var y = i % recipesInRow;
-        sixArray[x][y] = data[i];
+    for (ithRecipe = 0; ithRecipe < numberOfRecipes; ithRecipe++) {
+        var row = Math.floor(ithRecipe / recipesInRow);
+        var column = ithRecipe % recipesInRow;
+        tableWithRecipes[row][column] = filteredAndSortedRecipes[ithRecipe];
     }
 
-    return sixArray;
+    return tableWithRecipes;
 };
