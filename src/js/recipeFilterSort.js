@@ -19,7 +19,7 @@ var sortRecipes = function(recipes, typeOfSorting) {
     });
 
     return sortedRecipes;
-}
+};
 
 var filterAndSortRecipes = function(recipes, filterForTitle, typeOfSorting) {
     recipes = sortRecipes(recipes, typeOfSorting);
