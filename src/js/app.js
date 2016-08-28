@@ -1,4 +1,11 @@
-angular.module('pindish', ['ngDialog'])
+angular.module('pindish', ['ngDialog', 'ngRoute'])
+
+.config(function($routeProvider) {
+    $routeProvider
+        .when("/", {
+            templateUrl: "main.xhtml"
+        })
+})
 
 .directive('navigationBar', function() {
     return {
