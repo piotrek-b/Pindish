@@ -13,7 +13,7 @@
 
 .icon-size {
     width: 32px;
-    heigth: 32px;
+    height: 32px;
 }
 
 .filter-position {
@@ -29,7 +29,7 @@
 }
 
 .filter-element {
-    width: 100%; //of filter-position
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -41,6 +41,10 @@
 
 
 /* Top Navigation */
+
+.top-nav-pindish>li>a {
+    color: #fff;
+}
 
 .top-nav-pindish>li>a:hover, .top-nav>li>a:focus, .top-nav-pindish>.open>a, .top-nav-pindish>.open>a:hover, .top-nav-pindish>.open>a:focus {
     background-color: rgb(120, 28, 22);
@@ -90,25 +94,25 @@
 .recipe-card {
     display: inline-block;
     position: relative;
-    padding: 0px;
+    padding: 0;
     overflow: hidden;
     border-radius: 2px;
     margin-bottom: 20px;
     background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .recipe-card:hover, .recipe-card:focus {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .recipe-card> img {
-    padding: 0px;
+    padding: 0;
     position: relative;
     width: 100%;
     text-align: center;
@@ -142,19 +146,18 @@
 }
 
 .navbar-pindish-toggle:hover, .navbar-toggle:focus {
-    background-color: rgb(120, 28, 22) !important;
+    background-color: rgb(120, 28, 22);
 }
 
-a.navbar-pindish-brand {
+.navbar-pindish-brand {
     margin: auto;
     font-size: 35px;
-    color: #fff;
+    color: #fff !important;
 }
 
-a.nav-pindish-link, a.footer-link {
+.nav-pindish-link, .footer-link {
     user-select: none !important;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    color: #fff !important;
 }
