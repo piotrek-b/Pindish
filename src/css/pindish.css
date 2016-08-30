@@ -1,0 +1,160 @@
+/*!
+ * Pindish - Main CSS Template.
+ */
+
+.row {
+    text-align: center;
+}
+
+.move-text {
+    position: absolute;
+    margin-left: 25%;
+}
+
+.icon-size {
+    width: 32px;
+    heigth: 32px;
+}
+
+.filter-position {
+    width: 15%;
+    height: 120%;
+}
+
+
+/* remake height of well */
+
+.well {
+    height: 100%;
+}
+
+.filter-element {
+    width: 100%; //of filter-position
+    margin-bottom: 10px;
+}
+
+.btn-color {
+    background: #DADFE1;
+    color: #000;
+    box-shadow: 0 6px #6C7A89;
+}
+
+
+/* Top Navigation */
+
+.top-nav-pindish>li>a:hover, .top-nav>li>a:focus, .top-nav-pindish>.open>a, .top-nav-pindish>.open>a:hover, .top-nav-pindish>.open>a:focus {
+    background-color: rgb(120, 28, 22);
+}
+
+
+/* Footer */
+
+.footer-pindish {
+    border: none;
+}
+
+.footer-links {
+    padding: 0 15px;
+}
+
+.footer-links>li {
+    display: inline-block;
+}
+
+.footer-links>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.footer-links>li>a:hover, .footer-links>li>a:focus, .footer-links>.open>a, .footer-links>.open>a:hover, .footer-links>.open>a:focus {
+    background-color: rgb(120, 28, 22);
+}
+
+.footer-link {
+    font-size: 20px;
+}
+
+
+/* Custom Colored Panels */
+
+.container-main {
+    background-color: rgb(236, 236, 236);
+    height: auto;
+    position: relative;
+}
+
+/* Recipe cards */
+
+.recipe-card {
+    display: inline-block;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.recipe-card:hover, .recipe-card:focus {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.recipe-card> img {
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.recipe-card> h3 {
+    padding: 5px;
+    margin: 5px;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.recipe-card> p {
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* Navbars */
+
+.navbar-pindish {
+    background-color: rgb(150, 40, 27);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border: none;
+}
+
+.navbar-pindish-toggle {
+    border: none;
+}
+
+.navbar-pindish-toggle:hover, .navbar-toggle:focus {
+    background-color: rgb(120, 28, 22) !important;
+}
+
+a.navbar-pindish-brand {
+    margin: auto;
+    font-size: 35px;
+    color: #fff;
+}
+
+a.nav-pindish-link, a.footer-link {
+    user-select: none !important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    color: #fff !important;
+}
