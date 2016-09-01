@@ -21,6 +21,17 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
     };
 })
 
+.directive("toggleFilter", function() {
+    return {
+        restrict: "A",
+        link: function() {
+            $("#nav-filter").click(function() {
+                $("#recipes-bar").slideToggle("fast");
+            });
+        }
+    };
+})
+
 .controller('dialogController', ['$scope', 'ngDialog', function($scope, ngDialog) {
 
     $scope.clickToOpen = function() {
@@ -56,13 +67,13 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
         $scope.nameSort = ($scope.nameSort + 1) % 3;
     }
 
-    $scope.changeNameSortArrow = function() {
+    $scope.changeNameSortIcon = function() {
         if ($scope.nameSort === 0) {
-            return "glyphicon-triangle-right";
+            return "fa fa-clock-o";
         } else if ($scope.nameSort === 1) {
-            return "glyphicon-triangle-bottom";
+            return "fa fa-sort-alpha-asc";
         } else {
-            return "glyphicon-triangle-top";
+            return "fa fa-sort-alpha-desc";
         }
     }
 
