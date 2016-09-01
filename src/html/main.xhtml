@@ -1,43 +1,40 @@
 <div class="container-fluid container-main" data-ng-module="pindish" data-ng-controller="dialogController">
 
     <!-- Page Heading -->
-    <div class="row">
+    <div id="recipes-bar" class="pull-right">
+        <ul>
+            <li>
+                <i class="fa fa-search search-recipe" aria-hidden="true"></i>
+                <input id="search" type="text" data-ng-model="filterName" placeholder=" Search..."/>
+            </li>
+            <li>
+                <a data-ng-click="changeNameSort()">
+                    <i class="fa fa-clock-o" data-ng-class="changeNameSortIcon()" aria-hidden="true"></i>
+                </a>
+            </li>
+            <ul></div>
 
-        <div class="col-lg-10">
-          <img src="../images/logo.png"/ class="pull-left">
-            <h1 class="page-header" style="margin-left: 50%;">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">
 
-               Your recipes
-               <!--
-                <button type="button" class="btn btn-lg btn-info" data-ng-click="addRecipePopup()">Click Me!</button>
-              -->
-           </h1>
-        </div>
-
-        <div class="filter-position pull-right">
-            <div class="well">
-                    <button type="button" class="btn btn-color filter-element" data-ng-click="changeNameSort()">
-                        <b style="float: left">Alphabetic</b>
-                        <span class="glyphicon" data-ng-class="changeNameSortArrow()" style="float: right;"></span>
-                    </button></br></br>
-                    <input type="text" class="filter-element" data-ng-model="filterName" placeholder="Filter by name" />
+                    Your recipes
+                    <!--
+            <button type="button" class="btn btn-lg btn-info" data-ng-click="addRecipePopup()">Click Me!</button>
+          -->
+                </h1>
             </div>
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div data-recipes-directive></div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+
+            </div>
+            <!-- /.row -->
+
         </div>
-
-    </div>
-    <!-- /.row -->
-
-    <div class="row">
-
-        <div class="col-lg-12">
-
-            <div data-recipes-directive></div>
-
-        </div>
-        <!-- /.col-lg-12 -->
-
-    </div>
-    <!-- /.row -->
-
-</div>
-<!-- /.container-fluid -->
+        <!-- /.container-fluid -->
