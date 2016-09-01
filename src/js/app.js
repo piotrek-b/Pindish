@@ -77,6 +77,14 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
         }
     }
 
+    $scope.truncateWithEllipsis = function(text, truncatedTextLength) {
+        if (text.length > truncatedTextLength) {
+            text = text.substring(0, truncatedTextLength).concat("...");
+        }
+
+        return text;
+    }
+
     $.getJSON('../json/recipes.json', function(dataJson) {
         $scope.recipes = dataJson;
 

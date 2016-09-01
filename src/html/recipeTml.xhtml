@@ -13,7 +13,7 @@
                         <img data-ng-src="{{ recipe.link }}" alt=""/>
                         <h3 class="recipe-name text-center">{{ recipe.name }}</h3>
                         <p>
-                            {{ recipe.description }}
+                            {{ truncateWithEllipsis(recipe.description, 50) }}
                         </p>
 
                     </div>
