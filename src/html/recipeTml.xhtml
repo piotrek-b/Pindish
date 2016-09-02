@@ -1,14 +1,16 @@
 <div id="recipe-book">
 
-    <div data-ng-hide="emptyRecipes()" data-ng-repeat="sixArray in recipesSix">
+    <div data-ng-hide="emptyRecipes()" data-ng-repeat="sixArray in recipesSix"  data-ng-init="sixArrayIdx = $index">
 
         <div class="row">
 
-            <div data-ng-repeat="recipe in sixArray">
+            <div data-ng-repeat="recipe in sixArray" data-ng-init="recIdx = $index">
 
-                <div class=" col-lg-2" data-ng-click="clickToOpen()">
+                <div class=" col-lg-2" data-ng-init="addRecipeCard = isAddRecipeCard(sixArrayIdx, recIdx)">
 
-                    <div class="recipe-card">
+                    <div data-ng-if="addRecipeCard" class="add-recipe-card" data-ng-click="addRecipePopup()"><p class="hidden">Add recipe</p><p class="nonHidden">+</p></div>
+
+                    <div data-ng-if="!addRecipeCard" class="recipe-card" data-ng-click="clickToOpen()">
 
                         <img data-ng-src="{{ recipe.link }}" alt=""/>
                         <h3 class="recipe-name text-center">{{ recipe.name }}</h3>
@@ -34,9 +36,14 @@
     <div data-ng-show="emptyRecipes()">
 
         <h1 class="page-header">
-            None recipes with that name.
+            No recipes found.
         </h1>
 
+        <div class="row">
+            <div class="col-lg-2 col-add-recipe-card">
+                <div class="add-recipe-card" data-ng-click="addRecipePopup()"><p>+</p></div>
+            </div>
+        </div>
     </div>
     <!-- /div -->
 

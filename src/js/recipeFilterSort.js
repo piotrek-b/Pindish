@@ -68,11 +68,17 @@ var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSortin
 
     var tableWithRecipes = createEmptyTableForRecipes(numberOfRecipes, recipesInRow);
 
-    //now we put data into arrays
-    for (var ithRecipe = 0; ithRecipe < numberOfRecipes; ithRecipe++) {
+    // Here we create the "Add Recipe Card"
+    if (tableWithRecipes.length !== 0) { [0][0] = { name: "Add recipe card" } }
+
+    //Now we put data into arrays
+    for (var ithRecipe = 1; ithRecipe < numberOfRecipes; ithRecipe++) {
+        //We start from the recipe with the index 1, and then put a recipe with index less by one,
+        //because position [0][0] is reserved for the "Add Recipe Card",
+        //so we need to start from the [0][1] position.
         var row = Math.floor(ithRecipe / recipesInRow);
         var column = ithRecipe % recipesInRow;
-        tableWithRecipes[row][column] = filteredAndSortedRecipes[ithRecipe];
+        tableWithRecipes[row][column] = filteredAndSortedRecipes[ithRecipe - 1];
     }
 
     return tableWithRecipes;
