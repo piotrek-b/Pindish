@@ -91,6 +91,10 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
         $scope.recipesSix = diveRecipesIntoRowAndFilter(dataJson, "", 0);
     });
 
+    $scope.isAddRecipeCard = function(row, column) {
+        return row === 0 && column === 0;
+    }
+
     //Data filter/sort options
     $scope.filterName = "";
     $scope.nameSort = 0; //0 - defualt, 1 - a->z , 2 z->a
