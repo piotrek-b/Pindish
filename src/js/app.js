@@ -60,7 +60,8 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
     };
 
     $scope.emptyRecipes = function() {
-        return $scope.recipesSix.length === 0;
+        //Determines whether first row of array has only one card - "Add recipe card".
+        return $scope.recipesSix[0].length === 1;
     };
 
     $scope.changeNameSort = function() {
