@@ -50,7 +50,7 @@ var createEmptyTableForRecipes = function(numberOfRecipes, recipesInRow) {
     if (numberOfRecipes % recipesInRow === 0) {
         tableWithRecipes[numberOfRows - 1] = new Array(recipesInRow);
     } else {
-        tableWithRecipes[numberOfRows - 1] = new Array(numberOfRows % recipesInRow);
+        tableWithRecipes[numberOfRows - 1] = new Array(numberOfRecipes % recipesInRow);
     }
 
     return tableWithRecipes;
@@ -66,10 +66,13 @@ var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSortin
     //Making parts from data
     var numberOfRecipes = filteredAndSortedRecipes.length;
 
+    //numberOfRecipes to be bigger by one, because of the additional 'Add Recipe Card'.
+    numberOfRecipes += 1;
+
     var tableWithRecipes = createEmptyTableForRecipes(numberOfRecipes, recipesInRow);
 
-    // Here we create the "Add Recipe Card"
-    if (tableWithRecipes.length !== 0) { [0][0] = { name: "Add recipe card" } }
+    // Here we create the "Add Recipe Card" (formally).
+    if (tableWithRecipes.length !== 0) { tableWithRecipes[0][0] = { name: "Add recipe card" } }
 
     //Now we put data into arrays
     for (var ithRecipe = 1; ithRecipe < numberOfRecipes; ithRecipe++) {
