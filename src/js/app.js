@@ -60,8 +60,14 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
     };
 
     $scope.emptyRecipes = function() {
-        //Determines whether first row of array has only one card - "Add recipe card".
-        return $scope.recipesSix[0].length === 1;
+        //First, it checks whether the recipe array is created, if it's not it
+        //it returns true, otherwise it determines whether first row of array
+        //has only one card - "Add recipe card".
+        if ($scope.recipesSix === null) {
+            return true;
+        } else {
+            return $scope.recipesSix[0].length === 1;
+        }
     };
 
     $scope.changeNameSort = function() {
