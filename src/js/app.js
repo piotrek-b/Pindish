@@ -34,17 +34,6 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
 
 .controller('dialogController', ['$scope', 'ngDialog', function($scope, ngDialog) {
 
-    $scope.clickToOpen = function() {
-        ngDialog.open({
-            template: 'popupTml.xhtml',
-            className: 'ngdialog-theme-default'
-        });
-    };
-
-    $scope.closePopup = function() {
-        ngDialog.close();
-    }
-
     $scope.addRecipePopup = function() {
         ngDialog.open({
             template: 'addNewRecipeTml.xhtml',
@@ -59,11 +48,24 @@ angular.module('pindish', ['ngDialog', 'ngRoute'])
         });
     };
 
+
+    $scope.recipePopup = function(recipe) {
+        ngDialog.open({
+            template: 'recipePopupTml.xhtml',
+            className: 'ngdialog-theme-default recipe-popup',
+            data: recipe
+        });
+    };
+
+    $scope.closePopup = function() {
+        ngDialog.close();
+    }
+
     $scope.emptyRecipes = function() {
         //First, it checks whether the recipe array is created, if it's not it
         //it returns true, otherwise it determines whether first row of array
         //has only one card - "Add recipe card".
-        if ($scope.recipesSix === null) {
+        if ($scope.recipesSix === null || $scope.recipesSix.length === 0) {
             return true;
         } else {
             return $scope.recipesSix[0].length === 1;

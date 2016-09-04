@@ -1,42 +1,58 @@
-[
-	{
-		"link" : "../images/test-meal-1.jpg",
-		"name" : "Tater Tot Taco Casserole",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	},
-	{
-		"link" : "../images/test-meal-2.jpg",
-		"name" : "Chinese Roast Pork",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	},
-	{
-		"link" : "../images/test-meal-3.jpg",
-		"name" : "Juicy Marinated Steaks",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	},
-	{
-		"link" : "../images/test-meal-4.jpg",
-		"name" : "Chilli con carne",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	},
-	{
-		"link" : "../images/test-meal-1.jpg",
-		"name" : "Some recipe with a long long desc",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	},
-	{
-		"link" : "../images/test-meal-2.jpg",
-		"name" : "Some recipe with a long long desc",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	},
-	{
-		"link" : "../images/test-meal-3.jpg",
-		"name" : "Some recipe with a long long desc",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	},
-	{
-		"link" : "../images/test-meal-4.jpg",
-		"name" : "Some recipe with a long long desc",
-		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-	}
-]
+[{
+    "link": "../images/test-meal-1.jpg",
+    "name": "Tater Tot Taco Casserole",
+    "description": "Preheat an oven to 375 degrees F (190 degrees C). Prepare a 9x13-inch baking dish with cooking spray. Cook the ground beef in a skillet over medium heat until completely browned, 5 to 7 minutes. Add the onion, garlic, taco seasoning mix, frozen Mexican-style corn, and black beans to the ground beef; cook and stir another 10 minutes. Set aside to cool slightly. Combine the ground beef mixture in a large bowl with about 3/4 of the Mexican cheese blend and the tater tots; stir to combine. Pour about 1/3 of the enchilada sauce into the bottom of the prepared baking dish. Add the tater tot mixture to the baking dish; lightly pat the mixture down into a solid, even layer. Pour the remaining enchilada sauce over the tater tot layer. Bake in the preheated oven for 40 minutes. Sprinkle the remaining Mexican cheese over the casserole and return to oven until the cheese is melted and bubbly, about 5 minutes more.",
+    "ingredients": ["1 pound ground beef", "1 small onion, diced", "1 clove garlic",
+        "1 ounce packet taco seasoning mix", "16 ounce bag frozen Mexican-style corn",
+        "12 ounce can black beans, rinsed and drained", "16 ounce package frozen tater tots",
+        "12 fluid ounce can enchilada sauce"
+    ]
+}, {
+    "link": "../images/test-meal-2.jpg",
+    "name": "Chinese Roast Pork",
+    "description": "To Marinate: Pierce meaty sides of meat with fork; place roast in a large plastic bag. In a medium bowl combine the soy sauce, sherry, honey, garlic and ginger. Mix well and pour mixture into bag with pork. Press air out of the bag and tie securely. Refrigerate at least 8 hours or overnight, turning bag over occasionally. Preheat oven to 325 degrees F (165 degrees C). Remove roast and marinade from refrigerator. Reserving marinade, remove roast and place in a 9x13 inch baking dish. Roast in the preheated oven for 1 hour. Brush with reserved marinade; cover loosely with foil and roast for an additional 1 1/2 hours (or until the internal temperature has reached 145 degrees F (63 degrees C), brushing several times with marinade. Remove roast from oven and let stand 15 minutes. Combine pan drippings with remaining marinade. In a small bowl combine cornstarch with cold water, mix together and add mixture to marinade. Boil marinade mixture for 4 to 5 minutes, or until mixture thickens. Serve with roast.",
+    "ingredients": ["4 pounds bone-in pork roast", "3/4 cup soy sauce", "1/2 cup dry sherry",
+					"1/3 cup honey", "2 cloves garlic, minced", "1/2 teaspoon ground ginger",
+					"1 tablespoon cornstarch", "1 tablespoon water"]
+}, {
+    "link": "../images/test-meal-3.jpg",
+    "name": "Juicy Marinated Steaks",
+    "description": "In a large non-reactive dish, mix together the orange juice, soy sauce, olive oil, lemon juice, parsley, garlic, oregano, and pepper. Place the tuna steaks in the marinade and turn to coat. Cover, and refrigerate for at least 30 minutes. Preheat grill for high heat. Lightly oil grill grate. Cook the tuna steaks for 5 to 6 minutes, then turn and baste with the marinade. Cook for an additional 5 minutes, or to desired doneness. Discard any remaining marinade.",
+    "ingredients": ["1/4 cup orange juice", "1/4 cup soy sauce", "2 tablespoons olive oil",
+		 			"1 tablespoon lemon juice", "2 tablespoons chopped fresh parsley",
+					"1 clove garlic, minced", "1/2 teaspoon chopped fresh oregano",
+					"1/2 teaspoon ground black pepper" ]
+}, {
+    "link": "../images/test-meal-4.jpg",
+    "name": "Chilli con carne",
+    "description": "Peel and finely chop the onions, garlic, carrots and celery – don’t worry about the technique, just chop away until fine. Halve the red peppers, remove the stalks and seeds and roughly chop. Place your largest casserole-type pan on a medium high heat. Add 2 lugs of olive oil and all your chopped vegetables. Add the chilli powder, cumin and cinnamon with a good pinch of salt and pepper. Stir every 30 seconds for around 7 minutes until softened and lightly coloured. Add the drained chickpeas, drained kidney beans and the tinned tomatoes. Add the minced beef, breaking any larger chunks up with a wooden spoon. Fill one of the empty tomato tins with water and pour this into the pan. Pick the coriander leaves and place them in the fridge. Finely chop the washed stalks and stir in. Add the balsamic vinegar and season with a good pinch of salt and pepper. Bring to the boil and turn the heat down to a simmer with a lid slightly askew for about an hour, stirring every now and again to stop it catching. This is fantastic served with fluffy rice. Just divide the rice and chilli into big bowls or serve in the middle of the table and let everyone help themselves. If you don’t fancy rice it’s equally good with a nice hunk of fresh crusty bread, over a jacket potato or with couscous. Put a small bowl of natural yoghurt, some guacamole and a few wedges of lime on the table, and sprinkle the chilli with the coriander leaves. I love to add a nice green salad to round it off.",
+    "ingredients": ["2 medium onions", "2 cloves garlic", "2 medium carrots",
+        "2 sticks celery", "2 red peppers", "olive oil",
+        "1 heaped teaspoon chilli powder", "1 heaped teaspoon ground cumin",
+        "1 heaped teaspoon ground cinnamon", "sea salt", "freshly ground black pepper",
+        "400g tinned chickpeas", "400g tinned red kidney beans", "2 x 400g tinned chopped tomatoes",
+        "500g quality minced beef", "1 small bunch fresh coriander", "2 tablespoons balsamic vinegar",
+        "400g basmati rice", "500g natural yoghurt", "230g guacamole",
+        "1 lime"
+    ]
+}, {
+    "link": "../images/test-meal-1.jpg",
+    "name": "Some recipe with a long long desc",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "ingredients": ["Salt", "Pepper"]
+}, {
+    "link": "../images/test-meal-2.jpg",
+    "name": "Some recipe with a long long desc",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "ingredients": ["Salt", "Pepper"]
+}, {
+    "link": "../images/test-meal-3.jpg",
+    "name": "Some recipe with a long long desc",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "ingredients": ["Salt", "Pepper"]
+}, {
+    "link": "../images/test-meal-4.jpg",
+    "name": "Some recipe with a long long desc",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "ingredients": ["Salt", "Pepper"]
+}]
