@@ -10,7 +10,7 @@
 
                     <div data-ng-if="addRecipeCard" class="add-recipe-card" data-ng-click="addRecipePopup()"><p class="hidden">Add recipe</p><p class="nonHidden">+</p></div>
 
-                    <div data-ng-if="!addRecipeCard" class="recipe-card" data-ng-click="clickToOpen()">
+                    <div data-ng-if="!addRecipeCard" class="recipe-card" data-ng-click="recipePopup(recipe)">
 
                         <img data-ng-src="{{ recipe.link }}" alt=""/>
                         <h3 class="recipe-name text-center">{{ recipe.name }}</h3>
