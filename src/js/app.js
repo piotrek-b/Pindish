@@ -9,37 +9,32 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives'])
 
 .controller('dialogController', ['$scope', 'ngDialog', function($scope, ngDialog) {
 
-    $scope.addRecipePopup = function() {
+    $scope.openPopup = function (popupUrl, popupClass, data) {
         ngDialog.open({
-            template: 'addNewRecipeTml.xhtml',
-            className: 'ngdialog-theme-default',
-            controller: 'dialogController'
-        });
-    };
-
-    $scope.addRecipeExtPopup = function() {
-        ngDialog.open({
-            template: 'addNewRecipeExtTml.xhtml',
-            className: 'ngdialog-theme-default',
-            controller: 'dialogController'
-        });
-    };
-
-
-    $scope.recipePopup = function(recipe) {
-        ngDialog.open({
-            template: 'recipePopupTml.xhtml',
-            className: 'ngdialog-theme-default recipe-popup',
+            template: popupUrl,
+            className: popupClass,
             controller: 'dialogController',
-            data: recipe
+            data: data
         });
     };
 
-    $scope.closePopup = function() {
+    $scope.closePopup = function () {
         ngDialog.close();
-    }
+    };
 
-    $scope.emptyRecipes = function() {
+    $scope.addRecipePopup = function () {
+        $scope.openPopup('addNewRecipeTml.xhtml', 'ngdialog-theme-default', null);
+    };
+
+    $scope.addRecipeExtPopup = function () {
+        $scope.openPopup('addNewRecipeExtTml.xhtml', 'ngdialog-theme-default', null);
+    };
+
+    $scope.recipePopup = function (recipe) {
+        $scope.openPopup('recipePopupTml.xhtml', 'ngdialog-theme-default recipe-popup', recipe);
+    };
+
+    $scope.emptyRecipes = function () {
         //First, it checks whether the recipe array is created, if it's not it
         //it returns true, otherwise it determines whether first row of array
         //has only one card - "Add recipe card".
