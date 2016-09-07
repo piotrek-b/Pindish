@@ -2,6 +2,10 @@
  * Pindish - Main CSS Template.
  */
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 .row {
     text-align: center;
 }
@@ -111,7 +115,7 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.recipe-card> img {
+.recipe-card  img {
     width: 100%
     padding: 0;
     position: relative;
@@ -120,13 +124,13 @@
     background-size: 100% 100%;
 }
 
-.recipe-card> h3 {
+.recipe-card  h3 {
     padding: 5px;
     margin: 5px;
     border-bottom: 1px solid rgb(236, 236, 236);
 }
 
-.recipe-card> p {
+.recipe-card  p {
     position: relative;
     padding: 5px;
     margin: 5px;

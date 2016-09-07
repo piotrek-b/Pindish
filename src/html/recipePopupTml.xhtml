@@ -1,34 +1,42 @@
-<div class="recipe-popup" data-ng-controller="dialogController" data-ng-init="recipe = ngDialogData">
+<div class="recipe-popup" data-ng-init="recipe = ngDialogData">
     <div class="row main-row">
         <div class="col-lg-8">
             <div class="row">
-                <h3 class="text-center"><strong>{{recipe.name}}</strong></h3>
+                <h3 data-recipe-title data-recipe="recipe" class="text-center"></h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="recipe-popup-nav">
-                        <li><i class="fa fa-plus-square" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-minus-square" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-code" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-trash" aria-hidden="true"></i></li>
+                        <li>
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-minus-square" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-code" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col-lg-4  image">
             <div class="row">
-                <img data-ng-src="{{recipe.link}}" alt=""/>
+                <data-recipe-img data-recipe="recipe"></data-recipe-img>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-4">
             <ul class="recipe-ingredients">
-                <li data-ng-repeat="ingredient in recipe.ingredients"><i class="fa fa-circle-o" aria-hidden="true"></i> {{ingredient}}</li>
+                <li data-ng-repeat="ingredient in recipe.ingredients" data-recipe-ingredient data-ingredient="ingredient"></li>
             </ul>
         </div>
         <div class="col-lg-8">
-            <p>{{recipe.description}}</p>
+            <p data-recipe-description data-recipe="recipe"></p>
         </div>
     </div>
 </div>

@@ -1,37 +1,27 @@
 <div id="recipe-book">
 
-    <div data-ng-hide="emptyRecipes()" data-ng-repeat="sixArray in recipesSix"  data-ng-init="sixArrayIdx = $index">
+    <div data-ng-hide="emptyRecipes()" data-ng-repeat="sixArray in recipesSix" data-ng-init="row = $index">
 
         <div class="row">
 
-            <div data-ng-repeat="recipe in sixArray" data-ng-init="recIdx = $index">
+            <div data-ng-repeat="recipe in sixArray" data-ng-init="column = $index">
 
-                <div class=" col-lg-2" data-ng-init="addRecipeCard = isAddRecipeCard(sixArrayIdx, recIdx)">
+                <div class=" col-lg-2">
 
-                    <div data-ng-if="addRecipeCard" class="add-recipe-card" data-ng-click="addRecipePopup()"><p class="hidden">Add recipe</p><p class="nonHidden">+</p></div>
-
-                    <div data-ng-if="!addRecipeCard" class="recipe-card" data-ng-click="recipePopup(recipe)">
-
-                        <img data-ng-src="{{ recipe.link }}" alt=""/>
-                        <h3 class="recipe-name text-center">{{ recipe.name }}</h3>
-                        <p>
-                            {{ truncateWithEllipsis(recipe.description, 50) }}
-                        </p>
-
-                    </div>
-                    <!-- /.panel-recipe-card -->
+                    <!-- custom directive - recipe card -->
+                    <data-recipe-card data-recipe="recipe" data-add-recipe-card="isAddRecipeCard(row, column)"></data-recipe-card>
 
                 </div>
                 <!-- /.col-lg-2 -->
 
             </div>
-            <!-- /div -->
+            <!-- /div repeat recipe -->
 
         </div>
         <!-- /.row -->
 
     </div>
-    <!-- /div -->
+    <!-- /div repeat sixArray -->
 
     <div data-ng-show="emptyRecipes()">
 
@@ -41,11 +31,16 @@
 
         <div class="row">
             <div class="col-lg-2 col-add-recipe-card">
-                <div class="add-recipe-card" data-ng-click="addRecipePopup()"><p>+</p></div>
+
+                <!-- custom directive - recipe card -->
+                <data-recipe-card data-recipe="recipe" data-add-recipe-card="true"></data-recipe-card>
+
             </div>
+            <!-- /.col-lg-2 -->
         </div>
+        <!-- /.row -->
     </div>
-    <!-- /div -->
+    <!-- /div ng-show -->
 
 </div>
 <!-- /#recipe-book -->
