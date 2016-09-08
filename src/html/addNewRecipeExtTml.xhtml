@@ -1,19 +1,21 @@
 <h3 class="text-center">
     <strong>Add New Recipe</strong>
 </h3>
-<div class="form-group">
-    <label>Recipe title:</label>
-    <input class="form-control" data-ng-model="recipeLink" placeholder="Title..."/>
-</div>
-<!-- /.form-group -->
-<div class="form-group">
-    <label>Recipe description:</label>
-    <textarea class="form-control" rows="3" data-ng-model="recipeDesc"></textarea>
-</div>
-<!-- /.form-group -->
-<div class="form-group">
-    <label>Recipe image:</label>
-    <input type="file" data-ng-model="recipeImg"/>
-</div>
-<!-- /.form-group -->
-<button type="button" class="btn btn-lg btn-primary" data-ng-click="closePopup()" data-ng-disabled="!recipeTitle.length &&!recipeDesc.length">Add</button>
+<form name="addNewRecipeExtForm" novalidate>
+    <div class="form-group">
+        <label>Recipe title:</label>
+        <input required type="text" class="form-control" data-ng-model="recipeTitle" name="title" placeholder="Title..."/>
+    </div>
+    <!-- /.form-group -->
+    <div class="form-group">
+        <label>Recipe description:</label>
+        <textarea required type="text" class="form-control" rows="3" data-ng-model="recipeDesc" name="description"></textarea>
+    </div>
+    <!-- /.form-group -->
+    <div class="form-group">
+        <label>Recipe image:</label>
+        <input type="file" data-ng-model="recipeImg" name="image"/>
+    </div>
+    <!-- /.form-group -->
+    <button type="button" class="btn btn-lg btn-primary" data-ng-click="closePopup()" data-ng-disabled="!addNewRecipeExtForm.$valid">Add</button>
+</form>

@@ -5,7 +5,8 @@ angular.module('appDirectives', [])
 .directive('navigationBar', function() {
     return {
         restrict: 'A',
-        templateUrl: 'navigation.xhtml'
+        templateUrl: 'navigation.xhtml',
+        controller: 'dialogController'
     };
 })
 

@@ -1,11 +1,13 @@
 <h3 class="text-center">
     <strong>Add New Recipe</strong>
 </h3>
-<div class="form-group">
-    <label>Put link to your recipe here and load:</label>
-    <input class="form-control" data-ng-model="recipeLink" placeholder="Your link..."/>
-    <p class="help-block">...or skip and create recipe by yourself.</p>
-</div>
-<!-- /.form-group -->
-<button type="button" class="btn btn-lg btn-primary" data-ng-click="closePopup(); addRecipeExtPopup()" data-ng-disabled="!recipeLink.length">Load</button>
-<button type="button" class="btn btn-lg btn-default pull-right" data-ng-click="closePopup(); addRecipeExtPopup()">Skip</button>
+<form name="addNewRecipeForm" novalidate>
+    <div class="form-group">
+        <label>Put link to your recipe here and load:</label>
+        <input required type="url" class="form-control" data-ng-model="recipeLink" name="link" placeholder="Your link..."/>
+        <p class="help-block">...or skip and create recipe by yourself.</p>
+    </div>
+    <!-- /.form-group -->
+    <button type="button" class="btn btn-lg btn-primary" data-ng-click="addRecipeExtPopup()" data-ng-disabled="!addNewRecipeForm.$valid">Load</button>
+    <button type="button" class="btn btn-lg btn-default pull-right" data-ng-click="addRecipeExtPopup()">Skip</button>
+</form>

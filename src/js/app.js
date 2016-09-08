@@ -23,14 +23,17 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives'])
     };
 
     $scope.addRecipePopup = function () {
+        $scope.closePopup();
         $scope.openPopup('addNewRecipeTml.xhtml', 'ngdialog-theme-default', null);
     };
 
     $scope.addRecipeExtPopup = function () {
+        $scope.closePopup();
         $scope.openPopup('addNewRecipeExtTml.xhtml', 'ngdialog-theme-default', null);
     };
 
     $scope.recipePopup = function (recipe) {
+        $scope.closePopup();
         $scope.openPopup('recipePopupTml.xhtml', 'ngdialog-theme-default recipe-popup', recipe);
     };
 
