@@ -1,0 +1,10 @@
+<div data-ng-if="addRecipeCard" class="add-recipe-card" data-ng-click="addRecipePopup()">
+    <p class="hidden">Add recipe</p>
+    <p class="nonHidden">+</p>
+</div>
+
+<div data-ng-if="!addRecipeCard" class="recipe-card" data-ng-click="recipePopup(recipe)">
+    <data-recipe-img data-recipe="recipe"></data-recipe-img>
+    <h3 data-recipe-title data-recipe="recipe" class="recipe-name text-center"></h3>
+    <p data-recipe-short-description data-recipe="recipe"></p>
+</div>
