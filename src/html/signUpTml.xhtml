@@ -1,0 +1,51 @@
+<div class="sign-up-popup" data-ng-controller="dialogController">
+    <div class="row">
+        <h3 class="text-center popup-header">
+            <strong>Sign up</strong>
+        </h3>
+    </div>
+    <form name="signUp" novalidate>
+
+        <div class="form-group">
+            <input required type="text" class="form-control" name="username" data-ng-model="userName" placeholder="Username..."/>
+        </div>
+        <div class="form-group">
+            <input required type="email" class="form-control" name="userEmail" data-ng-model="email" placeholder="your.email@example.com..."/>
+        </div>
+        <div class="form-group">
+            <input required type="password" class="form-control" name="password" data-ng-model="userPassword" data-ng-minlength="8" placeholder="Password..."/>
+        </div>
+        <div class="form-group">
+            <input required type="password" class="form-control" name="confirmpassword" data-ng-model="userConfirmPassword" data-compare-to="userPassword" placeholder="Confirm password..."/>
+        </div>
+
+        <button type="button" class="btn btn-lg btn-full btn-pindish btn-pindish-primary" data-ng-click="closePopup()" data-ng-disabled="!signUp.$valid">Sign up</button>
+
+        <div class="sign-in-up-alt">
+            <p>
+                <span>or</span>
+            </p>
+
+            <div class="row margin">
+                <div class="sign-in-up-alt-btn">
+                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-facebook" data-ng-click="closePopup()">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="sign-in-up-alt-btn">
+                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-google-plus" data-ng-click="closePopup()">
+                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="sign-in-up-alt-btn">
+                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-twitter" data-ng-click="closePopup()">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+</div>

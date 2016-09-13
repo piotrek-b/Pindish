@@ -1,0 +1,50 @@
+<div class="sign-up-popup" data-ng-controller="dialogController">
+    <div class="row">
+        <h3 class="text-center popup-header">
+            <strong>Sign in</strong>
+        </h3>
+    </div>
+    <form name="signIn" novalidate>
+
+        <div class="form-group">
+            <input required type="text" class="form-control" name="username" data-ng-model="userName" placeholder="Username or e-mail..."/>
+        </div>
+        <div class="form-group">
+            <input required type="password" class="form-control" name="password" data-ng-model="userPassword" data-ng-minlength="8" placeholder="Password..."/>
+        </div>
+        <div class="form-group remember-me">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">Remember me</input>
+                </label>
+            </div>
+        </div>
+        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+
+        <button type="button" class="btn btn-lg btn-full btn-pindish btn-pindish-primary" data-ng-click="closePopup()" data-ng-disabled="!signIn.$valid">Sign in</button>
+
+        <div class="sign-in-up-alt">
+            <p>
+                <span>or</span>
+            </p>
+
+            <div class="row margin">
+                <div class="sign-in-up-alt-btn">
+                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-facebook" data-ng-click="closePopup()">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="sign-in-up-alt-btn">
+                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-google-plus" data-ng-click="closePopup()">
+                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="sign-in-up-alt-btn">
+                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-twitter" data-ng-click="closePopup()">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
