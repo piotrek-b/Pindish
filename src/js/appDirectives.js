@@ -126,7 +126,7 @@ angular.module('appDirectives', [])
         link: function(scope, element, attributes, ngModel) {
 
             ngModel.$validators.compareTo = function(modelValue) {
-                return modelValue == scope.otherModelValue;
+                return modelValue === otherModelValue;
             };
 
             scope.$watch("otherModelValue", function() {
