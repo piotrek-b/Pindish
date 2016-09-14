@@ -34,7 +34,17 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives'])
 
     $scope.recipePopup = function (recipe) {
         $scope.closePopup();
-        $scope.openPopup('recipePopupTml.xhtml', 'ngdialog-theme-default recipe-popup', recipe);
+        $scope.openPopup('recipePopupTml.xhtml', 'ngdialog-theme-default theme-recipe-popup theme-padding-50px', recipe);
+    };
+
+    $scope.signInPopup = function (recipe) {
+        $scope.closePopup();
+        $scope.openPopup('signInTml.xhtml', 'ngdialog-theme-default', null);
+    };
+
+    $scope.signUpPopup = function (recipe) {
+        $scope.closePopup();
+        $scope.openPopup('signUpTml.xhtml', 'ngdialog-theme-default', null);
     };
 
     $scope.emptyRecipes = function () {
