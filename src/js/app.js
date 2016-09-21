@@ -1,4 +1,4 @@
-angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives'])
+angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives', 'angular-media-preview'])
 
 .config(function($routeProvider) {
     $routeProvider
@@ -27,9 +27,12 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives'])
         $scope.openPopup('addNewRecipeTml.xhtml', 'ngdialog-theme-default', null);
     };
 
-    $scope.addRecipeExtPopup = function () {
+    $scope.addRecipeExtPopup = function (recipe) {
         $scope.closePopup();
-        $scope.openPopup('addNewRecipeExtTml.xhtml', 'ngdialog-theme-default', null);
+
+        if (recipe === null) recipe = $scope.recipeInterface;
+
+        $scope.openPopup('addNewRecipeExtTml.xhtml', 'ngdialog-theme-default theme-recipe-popup theme-padding-50px', recipe);
     };
 
     $scope.recipePopup = function (recipe) {
@@ -84,15 +87,53 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives'])
         return text;
     }
 
+    $scope.addElement = function (element, array) {
+        if (!$scope.containsElement(element, array) && element.length > 0) array.push(element);
+    }
+
+    $scope.removeElement = function(indexOf, array) {
+        if (indexOf !== undefined) array.splice(indexOf, 1);
+    }
+
+    $scope.containsElement = function(element, array) {
+        if (array === undefined) return false;
+        return array.indexOf(element) >= 0 ? true : false;
+    }
+
+    $scope.openImageInput = function(id) {
+        document.getElementById('add-image-input').click();
+    }
+
     $.getJSON('../json/recipes.json', function(dataJson) {
         $scope.recipes = dataJson;
 
         $scope.recipesSix = diveRecipesIntoRowAndFilter(dataJson, "", 0);
     });
 
+    $scope.readURL = function(input, id) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#ar')
+        .attr('src', e.target.result)
+        .width(150)
+        .height(200);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+
     //Data filter/sort options
     $scope.filterName = "";
     $scope.nameSort = 0; //0 - defualt, 1 - a->z , 2 z->a
+
+    $scope.recipeInterface = {
+        link: "",
+        name: "",
+        description: "",
+        ingredients: []
+    }
 
     var countRecipes = 0;
 }])
