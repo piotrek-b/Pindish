@@ -9,6 +9,7 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives', 'angular-medi
 
 .controller('dialogController', ['$scope', 'ngDialog', function($scope, ngDialog) {
 
+    //-- POPUPS
     $scope.openPopup = function (popupUrl, popupClass, data) {
         ngDialog.open({
             template: popupUrl,
@@ -30,7 +31,7 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives', 'angular-medi
     $scope.addRecipeExtPopup = function (recipe) {
         $scope.closePopup();
 
-        if (recipe === null) recipe = $scope.recipeInterface;
+        if (recipe === null) recipe = $scope.recipeInterface;//TODO: Interface is bad name, better one : SCHEMA (IMHO)
 
         $scope.openPopup('addNewRecipeExtTml.xhtml', 'ngdialog-theme-default theme-recipe-popup theme-padding-50px', recipe);
     };
@@ -49,6 +50,10 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives', 'angular-medi
         $scope.closePopup();
         $scope.openPopup('signUpTml.xhtml', 'ngdialog-theme-default', null);
     };
+    //-- POPUPS end , TODO: would you consider to take out this whole popUp logic to another file with some comments?
+    // recipe.Interface(change name) is used only here, i think it is good to take this all out, and use it
+    // the only change is to pass NGDIALOG as argument where it is needed (JUST A CONSIDER, YOU MAY NOT DO IT)
+    // and we would lose all the $scope pinging during invoking :)
 
     $scope.emptyRecipes = function () {
         //First, it checks whether the recipe array is created, if it's not it
@@ -105,12 +110,12 @@ angular.module('pindish', ['ngDialog', 'ngRoute', 'appDirectives', 'angular-medi
     }
 
     $.getJSON('../json/recipes.json', function(dataJson) {
-        $scope.recipes = dataJson;
+        $scope.recipes = dataJson;//TODO: again bad naming after all
 
-        $scope.recipesSix = diveRecipesIntoRowAndFilter(dataJson, "", 0);
+        $scope.recipesSix = diveRecipesIntoRowAndFilter(dataJson, "", 0);//TODO: Such a foolish name(my bad)
     });
 
-    $scope.readURL = function(input, id) {
+    $scope.readURL = function(input, id) {//TODO: Formatting and little comment needed what is that
   if (input.files && input.files[0]) {
     var reader = new FileReader();
     reader.onload = function (e) {
