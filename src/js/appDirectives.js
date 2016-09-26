@@ -1,6 +1,8 @@
+// -- CUSTOM DIRECTIVES
 angular.module('appDirectives', [])
 
-// MAIN PAGE ELEMENTS DIRECTIVES
+// -- MAIN PAGE ELEMENTS DIRECTIVES
+
 
 .directive('navigationBar', function() {
     return {
@@ -28,7 +30,11 @@ angular.module('appDirectives', [])
     };
 })
 
-// RECIPE CARD/POPUP DIRECTIVES
+
+// -- MAIN PAGE ELEMENTS DIRECTIVES end
+
+
+// -- RECIPE CARD/POPUP DIRECTIVES
 
 .directive('recipeBook', function() {
     return {
@@ -38,14 +44,16 @@ angular.module('appDirectives', [])
             $scope.$watch('filterName', function(newVal, oldVal) {
                 //filter Json
                 if (newVal !== oldVal) {
-                    $scope.recipesSix = diveRecipesIntoRowAndFilter($scope.recipes, newVal, $scope.nameSort);
+                    $scope.recipesRows = diveRecipesIntoRowAndFilter(
+                        $scope.recipesJSON, newVal, $scope.nameSort);
                 }
             });
 
             $scope.$watch('nameSort', function(newVal, oldVal) {
                 //filter Json
                 if (newVal !== oldVal) {
-                    $scope.recipesSix = diveRecipesIntoRowAndFilter($scope.recipes, $scope.filterName, newVal);
+                    $scope.recipesRows = diveRecipesIntoRowAndFilter(
+                        $scope.recipesJSON, $scope.filterName, newVal);
                 }
             });
         }
@@ -67,7 +75,7 @@ angular.module('appDirectives', [])
 .directive('recipeImg', function() {
     return {
         restrict: 'E',
-        template: '<img data-ng-src="{{ recipe.link }}" alt=""/>',
+        template: '<img data-ng-src="{{ recipe.image }}" alt=""/>',
         scope: {
             recipe: '='
         }
@@ -77,7 +85,7 @@ angular.module('appDirectives', [])
 .directive('recipeTitle', function() {
     return {
         restrict: 'A',
-        template: '<strong>{{recipe.name}}</strong>',
+        template: '<strong>{{recipe.title}}</strong>',
         scope: {
             recipe: '='
         }
@@ -87,7 +95,7 @@ angular.module('appDirectives', [])
 .directive('recipeShortDescription', function() {
     return {
         restrict: 'A',
-        template: '{{ truncateWithEllipsis(recipe.description, 50) }}',
+        template: '{{ helper.truncateWithEllipsis(recipe.description, 50) }}',
         controller: 'dialogController',
         scope: {
             recipe: '='
@@ -115,7 +123,12 @@ angular.module('appDirectives', [])
     };
 })
 
-// SIGN IN/UP POPUP DIRECTIVES
+
+// -- RECIPE CARD/POPUP DIRECTIVES end
+
+
+// -- SIGN IN/UP POPUP DIRECTIVES
+
 
 .directive("compareTo", function() {
     return {
@@ -126,7 +139,7 @@ angular.module('appDirectives', [])
         link: function(scope, element, attributes, ngModel) {
 
             ngModel.$validators.compareTo = function(modelValue) {
-                return modelValue === otherModelValue;
+                return modelValue === scope.otherModelValue;
             };
 
             scope.$watch("otherModelValue", function() {
@@ -136,7 +149,12 @@ angular.module('appDirectives', [])
     };
 })
 
-// ADD NEW RECIPE DIRECTIVES
+
+// -- SIGN IN/UP POPUP DIRECTIVES end
+
+
+// -- ADD NEW RECIPE DIRECTIVES
+
 
 .directive("fileread", function() {
     return {
@@ -165,5 +183,18 @@ angular.module('appDirectives', [])
                 elem.find("input[type='file']").click();
             });
         }
-}
-}]);
+    }
+}])
+
+.directive('addNewRecipeIngredient', function() {
+    return {
+        restrict: 'A',
+        template: '- {{ingredient}}',
+        scope: {
+            ingredient: '='
+        }
+    };
+})
+
+
+// -- ADD NEW RECIPE DIRECTIVES end

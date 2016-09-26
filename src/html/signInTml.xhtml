@@ -1,50 +1,102 @@
+<!-- Sign In Popup -->
+
 <div class="sign-up-popup" data-ng-controller="dialogController">
+
+    <!-- Popup title -->
     <div class="row">
+
         <h3 class="text-center popup-header">
             <strong>Sign in</strong>
         </h3>
+
     </div>
+    <!-- /.row -->
+
     <form name="signIn" novalidate>
 
+        <!-- Username/E-mail -->
         <div class="form-group">
+
             <input required type="text" class="form-control" name="username" data-ng-model="userName" placeholder="Username or e-mail..."/>
+
         </div>
+        <!-- /.form-group -->
+
+        <!-- Password -->
         <div class="form-group">
+
             <input required type="password" class="form-control" name="password" data-ng-model="userPassword" data-ng-minlength="8" placeholder="Password..."/>
+
         </div>
+        <!-- /.form-group -->
+
+        <!-- Remember Me -->
         <div class="form-group remember-me">
+
             <div class="checkbox">
+
                 <label>
                     <input type="checkbox" value="">Remember me</input>
                 </label>
+
             </div>
+            <!-- /.checkbox -->
+
         </div>
+        <!-- /.form-group remember-me -->
+
+        <!-- Forgot Password -->
         <a href="#" class="forgot-password pull-right">Forgot password?</a>
 
-        <button type="button" class="btn btn-lg btn-full btn-pindish btn-pindish-primary" data-ng-click="closePopup()" data-ng-disabled="!signIn.$valid">Sign in</button>
+        <button type="button" class="btn btn-lg btn-full btn-pindish btn-pindish-primary" data-ng-click="popup.closePopup()" data-ng-disabled="!signIn.$valid">Sign in</button>
 
-        <div class="sign-in-up-alt">
-            <p>
-                <span>or</span>
-            </p>
+    </form>
+    <!-- /signIn -->
 
-            <div class="row margin">
-                <div class="sign-in-up-alt-btn">
-                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-facebook" data-ng-click="closePopup()">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <div class="sign-in-up-alt-btn">
-                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-google-plus" data-ng-click="closePopup()">
-                        <i class="fa fa-google-plus" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <div class="sign-in-up-alt-btn">
-                    <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-twitter" data-ng-click="closePopup()">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </button>
-                </div>
+    <!-- Sign in/up alternatives items -->
+    <div class="sign-in-up-alt">
+
+        <p>
+            <span>or</span>
+        </p>
+
+        <div class="row margin">
+
+            <!-- Facebook -->
+            <div class="sign-in-up-alt-btn">
+
+                <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-facebook" data-ng-click="popup.closePopup()">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </button>
 
             </div>
+            <!-- /.sign-in-up-alt-btn -->
+
+            <!-- Google+ -->
+            <div class="sign-in-up-alt-btn">
+
+                <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-google-plus" data-ng-click="popup.closePopup()">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </button>
+
+            </div>
+            <!-- /.sign-in-up-alt-btn -->
+
+            <!-- Twitter -->
+            <div class="sign-in-up-alt-btn">
+
+                <button type="button" class="btn btn-sm btn-full btn-pindish  btn-pindish-twitter" data-ng-click="popup.closePopup()">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </button>
+
+            </div>
+            <!-- /.sign-in-up-alt-btn -->
 
         </div>
+        <!-- /.row /.margin -->
+
+    </div>
+    <!-- /.sign-in-up-alt -->
+
+</div>
+<!-- /.sign-up-popup -->

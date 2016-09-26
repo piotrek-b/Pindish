@@ -12,9 +12,9 @@ var sortRecipes = function(recipes, typeOfSorting) {
 
     var sortedRecipes = recipes.sort(function(recipeA, recipeB) {
         if (typeOfSorting === TYPES_OF_SORTING.DECREASING) {
-            return recipeA.name.toLowerCase() > recipeB.name.toLowerCase() ? 1 : -1;
+            return recipeA.title.toLowerCase() > recipeB.title.toLowerCase() ? 1 : -1;
         } else {
-            return recipeA.name.toLowerCase() < recipeB.name.toLowerCase() ? 1 : -1;
+            return recipeA.title.toLowerCase() < recipeB.title.toLowerCase() ? 1 : -1;
         }
     });
 
@@ -30,8 +30,8 @@ var filterAndSortRecipes = function(recipes, filterForTitle, typeOfSorting) {
     var numberOfRecipes = recipes.length;
 
     for (var ithRecipe = 0; ithRecipe < numberOfRecipes; ithRecipe++) {
-        //we check if filter is within a name of recipe
-        if (recipes[ithRecipe].name.toLowerCase().indexOf(filterForTitle) !== -1) {
+        //we check if filter is within a title of recipe
+        if (recipes[ithRecipe].title.toLowerCase().indexOf(filterForTitle) !== -1) {
             filteredRecipes.push(recipes[ithRecipe]);
         }
     }
@@ -72,7 +72,7 @@ var diveRecipesIntoRowAndFilter = function(recipes, filterForTitle, typeOfSortin
     var tableWithRecipes = createEmptyTableForRecipes(numberOfRecipes, recipesInRow);
 
     // Here we create the "Add Recipe Card" (formally).
-    if (tableWithRecipes.length !== 0) { tableWithRecipes[0][0] = { name: "Add recipe card" } }
+    if (tableWithRecipes.length !== 0) { tableWithRecipes[0][0] = { title: "Add recipe card" } }
 
     //Now we put data into arrays
     for (var ithRecipe = 1; ithRecipe < numberOfRecipes; ithRecipe++) {

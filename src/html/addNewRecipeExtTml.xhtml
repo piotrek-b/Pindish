@@ -1,51 +1,113 @@
+<!-- Add New Recipe Ext Popup -->
+
 <div class="recipe-popup add-recipe-popup" data-ng-init="recipe = ngDialogData">
+
     <form name="addNewRecipeExtForm" novalidate>
+
+        <!-- First row - Title, Menu and Image -->
         <div class="row main-row">
+
             <div class="col-lg-8">
+
                 <div class="row">
                     <div class="form-group">
-                        <h3 class="text-center"><input required type="text" class="form-control add-recipe-title-input" data-ng-model="recipe.name" name="title" placeholder="Recipe title..."/></h3>
+
+                        <h3 class="text-center"><input required type="text" class="form-control add-recipe-title-input" data-ng-model="recipe.title" name="title" placeholder="Recipe title..."/></h3>
+
                     </div>
+                    <!-- /.form-group -->
+
                 </div>
+                <!-- /.row -->
+
                 <div class="row">
+
                     <div class="col-lg-12">
+
+                        <!-- Add New Recipe Ext popup menu item -->
                         <ul class="recipe-popup-nav">
-                            <li data-ng-click="recipePopup(recipe)">
+
+                            <li data-ng-click="popup.recipePopup(recipe)">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </li>
-                            <li data-ng-click="closePopup()" class="accept-recipe">
+
+                            <li data-ng-click="popup.closePopup()" class="accept-recipe">
                                 <i class="fa fa-check" aria-hidden="true"></i>
                             </li>
-                            <li data-ng-click="openImageInput()">
-                                <input type="file" name="image" id="add-image-input" data-fileread="recipe.link" data-ng-model="recipe.link" data-preview-container="recipeImageContainer" accept="image/*" media-preview>
+
+                            <li data-ng-click="helper.openImageInput()">
+                                <input type="file" name="image" id="add-image-input" data-fileread="recipe.image" data-ng-model="recipe.image" data-preview-container="recipeImageContainer" accept="image/*" media-preview>
                                 <i class="fa fa-picture-o" aria-hidden="true"></i>
                             </li>
+
                         </ul>
+                        <!-- /.recipe-popup-nav -->
+
                     </div>
+                    <!-- /.col-lg-12 -->
+
                 </div>
+                <!-- /.row -->
+
             </div>
-            <div class="col-lg-4  image">
+            <!-- /.col-lg-8 -->
+
+            <!-- Recipe Image -->
+            <div class="col-lg-4 image">
+
+                <!-- custom directive - recipe image container -->
                 <div id="recipeImageContainer"></div>
 
             </div>
+            <!-- /.col-lg-4 /.image -->
+
         </div>
+        <!-- /.row /.main-row -->
+
+        <!-- Second row - ingredients and description -->
         <div class="row">
+
+            <!-- Recipe ingredients -->
             <div class="col-lg-4">
+
                 <div class="form-group input-group">
-                    <span class="input-group-addon" data-ng-click="addElement(newIngredient, recipe.ingredients)"><i class="fa fa-plus" aria-hidden="true"></i></span>
+
+                    <span class="input-group-addon" data-ng-click="helper.addElement(newIngredient, recipe.ingredients)">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </span>
                     <input required type="text" class="form-control add-ingredient" data-ng-model="newIngredient" placeholder="New ingredient..."/>
-                    <span class="input-group-addon" data-ng-click="removeElement(selectedIngredientIdx, recipe.ingredients)"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                    </div>
-                    <select id="recipe-ingredients-select" data-ng-model="selectedIngredientIdx" multiple>
-                        <option data-ng-repeat="ingredient in recipe.ingredients track by $index" data-ng-value="$index"> - {{ingredient}}</option>
-                    </select>
+                    <span class="input-group-addon" data-ng-click="helper.removeElement(selectedIngredientIdx, recipe.ingredients)">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </span>
+
+                </div>
+                <!-- /.form-group /.input-group -->
+
+                <select id="recipe-ingredients-select" data-ng-model="selectedIngredientIdx" multiple>
+                    <option data-ng-repeat="ingredient in recipe.ingredients track by $index" data-ng-value="$index" data-add-new-recipe-ingredient data-ingredient="ingredient"></option>
+                </select>
 
             </div>
+            <!-- /.col-lg-4 -->
+
+            <!-- Recipe description -->
             <div class="col-lg-8">
+
                 <div class="form-group">
+
                     <textarea class="form-control" rows="8" data-ng-model="recipe.description" placeholder="Recipe description..."></textarea>
+
                 </div>
+                <!-- /.form-group -->
+
             </div>
+            <!-- /.col-lg-8 -->
+
         </div>
+        <!-- /.row -->
+
     </form>
+    <!-- /addNewRecipeExtForm -->
+
 </div>
+<!-- /recipe-popup /.add-recipe-popup -->

@@ -1,58 +1,84 @@
 <!-- Navigation -->
 <nav class="navbar navbar-pindish navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="dialogController">
+
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header navbar-header-pindish">
+
         <a class="navbar-brand navbar-pindish-brand nav-link nav-pindish-link" href="index.html#/">Pindish</a>
+
     </div>
+    <!-- /.navbar-header /.navbar-header-pindish -->
+
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav top-nav-pindish">
+
         <li>
-            <a class="nav-link nav-pindish-link nav-pindish-add-recipe-link" data-ng-controller="dialogController" data-ng-click="addRecipePopup()">
-                <i class="fa  fa-plus" aria-hidden="true"></i>  Add
+            <a class="nav-link nav-pindish-link nav-pindish-add-recipe-link" data-ng-controller="dialogController" data-ng-click="popup.addRecipePopup()">
+                <i class="fa  fa-plus" aria-hidden="true"></i>
+                Add
             </a>
         </li>
-        <li>
+
         <li>
             <a id="nav-filter" class="dropdown-toggle nav-link nav-pindish-link" data-toggle-filter>
-                <i class="fa  fa-filter" aria-hidden="true"></i>  Filter
+                <i class="fa  fa-filter" aria-hidden="true"></i>
+                Filter
             </a>
         </li>
+
         <li>
             <a class="dropdown-toggle nav-link nav-pindish-link" data-toggle="dropdown">
-                <i class="fa fa-cogs" aria-hidden="true"></i>  Tools
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                Tools
             </a>
         </li>
+
         <li class="dropdown">
+
             <a class="dropdown-toggle nav-link nav-pindish-link" data-toggle="dropdown">
                 <i class="fa fa-user"></i>
                 John Smith
                 <b class="caret"></b>
             </a>
+
+            <!-- Dropdown sub-menu -->
             <ul class="dropdown-menu dropdown-menu-pindish">
+
                 <li>
                     <a href="#">
                         <i class="fa fa-fw fa-user"></i>
                         Profile
                     </a>
                 </li>
+
                 <li>
-                    <a data-ng-click="signUpPopup()">
+                    <a data-ng-click="popup.signUpPopup()">
                         Sign up
                     </a>
                 </li>
+
                 <li>
-                    <a data-ng-click="signInPopup()">
+                    <a data-ng-click="popup.signInPopup()">
                         Sign in
                     </a>
                 </li>
+
                 <li class="divider"></li>
+
                 <li>
                     <a href="#">
                         <i class="fa fa-fw fa-power-off"></i>
                         Log Out
                     </a>
                 </li>
+
             </ul>
+            <!-- /.dropdown-menu dropdown-menu-pindish -->
+
         </li>
+
     </ul>
+    <!-- /.nav navbar-right /.top-nav /.top-nav-pindish -->
+
 </nav>
+<!-- /."navbar /.navbar-pindish /.navbar-inverse /.navbar-fixed-top -->
