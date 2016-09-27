@@ -1,15 +1,17 @@
+<!-- Recipe book -->
+
 <div id="recipe-book">
 
-    <div data-ng-hide="emptyRecipes()" data-ng-repeat="sixArray in recipesSix" data-ng-init="row = $index">
+    <div data-ng-hide="emptyRecipes()" data-ng-repeat="row in recipesRows" data-ng-init="rowIdx = $index">
 
         <div class="row">
 
-            <div data-ng-repeat="recipe in sixArray" data-ng-init="column = $index">
+            <div data-ng-repeat="recipe in row" data-ng-init="columnIdx = $index">
 
                 <div class=" col-lg-2">
 
                     <!-- custom directive - recipe card -->
-                    <data-recipe-card data-recipe="recipe" data-add-recipe-card="isAddRecipeCard(row, column)"></data-recipe-card>
+                    <data-recipe-card data-recipe="recipe" data-add-recipe-card="helper.isAddRecipeCard(rowIdx, columnIdx)"></data-recipe-card>
 
                 </div>
                 <!-- /.col-lg-2 -->
@@ -21,7 +23,7 @@
         <!-- /.row -->
 
     </div>
-    <!-- /div repeat sixArray -->
+    <!-- /div repeat recipesRows -->
 
     <div data-ng-show="emptyRecipes()">
 
@@ -37,10 +39,12 @@
 
             </div>
             <!-- /.col-lg-2 -->
+
         </div>
         <!-- /.row -->
+
     </div>
     <!-- /div ng-show -->
 
 </div>
-<!-- /#recipe-book -->
+<!-- /div #recipe-book -->

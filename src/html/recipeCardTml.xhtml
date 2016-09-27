@@ -1,10 +1,25 @@
-<div data-ng-if="addRecipeCard" class="add-recipe-card" data-ng-click="addRecipePopup()">
+<!-- Recipe card -->
+
+<!-- Add New Recipe Card -->
+<div data-ng-if="addRecipeCard" class="add-recipe-card" data-ng-click="popup.addRecipePopup()">
+
     <p class="hidden">Add recipe</p>
     <p class="nonHidden">+</p>
-</div>
 
-<div data-ng-if="!addRecipeCard" class="recipe-card" data-ng-click="recipePopup(recipe)">
-    <data-recipe-img data-recipe="recipe"></data-recipe-img>
-    <h3 data-recipe-title data-recipe="recipe" class="recipe-name text-center"></h3>
-    <p data-recipe-short-description data-recipe="recipe"></p>
 </div>
+<!-- /.add-recipe-card -->
+
+<!-- Recipe card -->
+<div data-ng-if="!addRecipeCard" class="recipe-card" data-ng-click="popup.recipePopup(recipe)">
+
+    <!-- custom directive - recipe img -->
+    <data-recipe-img data-recipe="recipe"></data-recipe-img>
+
+    <!-- custom directive - recipe title -->
+    <h3 data-recipe-title data-recipe="recipe" class="recipe-name text-center"></h3>
+
+    <!-- custom directive - recipe short description -->
+    <p data-recipe-short-description data-recipe="recipe"></p>
+
+</div>
+<!-- /.recipe-card -->
