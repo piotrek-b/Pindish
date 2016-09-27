@@ -1,6 +1,6 @@
 // -- HELPER FUNCTIONS
 angular.module('pindish')
-    .factory('helperService', function() {
+    .factory('helperService', ['$timeout', function($timeout) {
 
         // Function which checks whether the array contains the given element.
         var containsElement = function(element, array) {
@@ -34,7 +34,12 @@ angular.module('pindish')
 
         // Function which opens image input in 'Add New Recipe' popup.
         helperServiceInstance.openImageInput = function() {
+            // We use $timeout service to get rid of '$apply already in progress'
+            // error, which occurs, when click event triggers another click
+            // event (click on icon -> click on input), both using $apply.
+            $timeout(function() {
             document.getElementById('add-image-input').click();
+        }, 0);
         }
 
         // -- ARRAY MANIPULATION
@@ -62,4 +67,4 @@ angular.module('pindish')
         // -- SERVICE end
 
         return helperServiceInstance;
-    })
+    }])
