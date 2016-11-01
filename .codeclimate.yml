@@ -18,3 +18,4 @@ exclude_paths:
 - src/images/*
 - src/resources/*
 - src/css/*
+- "src/js/fastMemoizeService.js"
