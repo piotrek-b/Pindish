@@ -8,12 +8,11 @@
 
             <li>
                 <i class="fa fa-search search-recipe" aria-hidden="true"></i>
-                <input id="search" type="text" data-ng-model="filterName" placeholder=" Search..."/>
+                <input id="search" type="text" data-ng-model="search.title" placeholder=" Search..."/>
             </li>
-
             <li>
-                <a data-ng-click="changeNameSort()">
-                    <i class="fa fa-clock-o" data-ng-class="changeNameSortIcon()" aria-hidden="true"></i>
+                <a data-ng-click="changeSortOrder()">
+                    <i class="fa fa-clock-o" data-ng-class="sortOrderIcon()" aria-hidden="true"></i>
                 </a>
             </li>
 

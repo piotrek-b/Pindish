@@ -1,0 +1,60 @@
+<!-- Recipe book -->
+
+<div id="recipe-book">
+
+    <div data-ng-repeat="rowOfRecipes in (filteredRecipes = (recipes |  filter: search | orderBy:sortOrder) | splitIntoRows:6:showAddRecipeCard:sortOrder) track by $index" data-ng-hide="helper.isEmpty(filteredRecipes)">
+
+        <div class="row">
+            
+            <!-- Add recipe card -->
+            <div data-ng-if="helper.isAddRecipeCard(showAddRecipeCard, $index)" class="col-lg-2">
+
+                    <!-- custom directive - add recipe card -->
+                    <data-add-recipe-card></data-recipe-card>
+
+            </div>
+                <!-- /.col-lg-2 -->
+
+            <!-- Repeat recipe -->
+            <div data-ng-repeat="recipe in rowOfRecipes track by $index">
+
+                <div class=" col-lg-2">
+
+                    <!-- custom directive - recipe card -->
+                    <data-recipe-card data-recipe="recipe"></data-recipe-card>
+
+                </div>
+                <!-- /.col-lg-2 -->
+
+            </div>
+            <!-- /div repeat recipe -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /div repeat recipesRows -->
+
+    <div data-ng-show="helper.isEmpty(filteredRecipes)">
+
+        <h1 class="page-header">
+            No recipes found.
+        </h1>
+
+        <div class="row">
+            <div data-ng-if="showAddRecipeCard" class="col-lg-2 col-add-recipe-card">
+
+                <!-- custom directive - recipe card -->
+                <data-add-recipe-card></data-recipe-card>
+
+            </div>
+            <!-- /.col-lg-2 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /div ng-show -->
+
+</div>
+<!-- /div #recipe-book -->

@@ -6,11 +6,11 @@ angular.module('pindish')
 
 
         // Data filter/sort options
-        $scope.filterName = "";
-        $scope.nameSort = 0; //0 - defualt, 1 - a->z , 2 z->a
+        $scope.sortOrder = '';
+        $scope.sortOrderNr = 0; //0 - defualt, 1 - a->z , 2 z->a
 
         // Recipes count.
-        var countRecipes = 0;
+        $scope.countRecipes = 0;
 
         // Popup functionality.
         $scope.popup = popupService;
@@ -18,51 +18,65 @@ angular.module('pindish')
         // Helper functions.
         $scope.helper = helperService;
 
+        // Show 'Add Recipe Card' criterion.
+        $scope.showAddRecipeCard = true;
+
 
         // -- VARIABLES end
 
 
         // -- FUNCTIONS
 
-        // Function, which checks whether the recipes array is defined, it's
-        // not null or contains only 'Add recipe card'
-        $scope.emptyRecipes = function() {
-            if ($scope.recipesRows === null || $scope.recipesRows === undefined ||
-                $scope.recipesRows.length === 0) {
-                return true;
-            } else {
-                return $scope.recipesRows[0].length === 1;
-            }
-        };
-
-
         // -- SORTING
 
 
         // Function, which changes sorting criterion.
-        $scope.changeNameSort = function() {
-            $scope.nameSort = ($scope.nameSort + 1) % 3;
+        $scope.changeSortOrder = function() {
+            $scope.sortOrderNr = ($scope.sortOrderNr + 1) % 3;
+            
+            switch ($scope.sortOrderNr) {
+                case 0:
+                    $scope.sortOrder = '';
+                    break;
+                case 1:
+                    $scope.sortOrder = 'title';
+                    break;
+                case 2:
+                    $scope.sortOrder = '-title';
+                    break;
+                default:
+                    $scope.sortOrder = '';
+                    break;
+            }
         }
 
         // Function, which changes sorting criterion icon from search/sort bar.
-        $scope.changeNameSortIcon = function() {
-            if ($scope.nameSort === 0) {
-                return "fa fa-clock-o";
-            } else if ($scope.nameSort === 1) {
-                return "fa fa-sort-alpha-asc";
-            } else {
-                return "fa fa-sort-alpha-desc";
+        $scope.sortOrderIcon = function() {
+            sortOrderIcon = '';
+
+            switch ($scope.sortOrderNr) {
+                case 0:
+                    sortOrderIcon = "fa fa-clock-o";
+                    break;
+                case 1:
+                    sortOrderIcon = "fa fa-sort-alpha-asc";
+                    break;
+                case 2:
+                    sortOrderIcon = "fa fa-sort-alpha-desc";
+                    break;
+                default:
+                    sortOrderIcon = "fa fa-clock-o";
+                    break;
             }
+
+            return sortOrderIcon;
         }
 
         // -- SORTING end
 
 
         $.getJSON('../json/recipes.json', function(dataJSON) {
-            $scope.recipesJSON = dataJSON;
-
-            $scope.recipesRows = diveRecipesIntoRowAndFilter($scope.recipesJSON,
-                "", $scope.nameSort);
+            $scope.recipes = $scope.recipes || JSON.parse(JSON.stringify(dataJSON));
         });
 
         // -- FUNCTIONS end
