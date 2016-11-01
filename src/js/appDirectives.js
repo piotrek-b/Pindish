@@ -39,24 +39,7 @@ angular.module('appDirectives', [])
 .directive('recipeBook', function() {
     return {
         restrict: 'A',
-        templateUrl: 'recipeTml.xhtml',
-        link: function($scope, element, attrs) {
-            $scope.$watch('filterName', function(newVal, oldVal) {
-                //filter Json
-                if (newVal !== oldVal) {
-                    $scope.recipesRows = diveRecipesIntoRowAndFilter(
-                        $scope.recipesJSON, newVal, $scope.nameSort);
-                }
-            });
-
-            $scope.$watch('nameSort', function(newVal, oldVal) {
-                //filter Json
-                if (newVal !== oldVal) {
-                    $scope.recipesRows = diveRecipesIntoRowAndFilter(
-                        $scope.recipesJSON, $scope.filterName, newVal);
-                }
-            });
-        }
+        templateUrl: 'recipeBook.xhtml'
     };
 })
 
@@ -66,9 +49,16 @@ angular.module('appDirectives', [])
         templateUrl: 'recipeCardTml.xhtml',
         controller: 'dialogController',
         scope: {
-            recipe: '=',
-            addRecipeCard: '='
+            recipe: '='
         }
+    };
+})
+
+.directive('addRecipeCard', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'addNewRecipeCardTml.xhtml',
+        controller: 'dialogController'
     };
 })
 

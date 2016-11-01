@@ -2,7 +2,7 @@
 angular.module('pindish')
     .factory('helperService', ['$timeout', function($timeout) {
 
-        // Function which checks whether the array contains the given element.
+        // Function, which checks whether the array contains the given element.
         var containsElement = function(element, array) {
             if (array === undefined) {
                 return false;
@@ -16,10 +16,21 @@ angular.module('pindish')
 
         var helperServiceInstance = {};
 
+        // Function, which checks whether the array is empty, null or undefined.
+
+        helperServiceInstance.isEmpty = function(array) {
+            if (array === null || array === undefined ||
+                array.length === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
         // Function, which checks whether card at the given coords is
         // 'Add Recipe Card'.
-        helperServiceInstance.isAddRecipeCard = function(row, column) {
-            return row === 0 && column === 0;
+        helperServiceInstance.isAddRecipeCard = function(showAddRecipeCard, index) {
+            return showAddRecipeCard && index === 0;
         }
 
         // Function which truncates text to the given length and appends the ellipsis.
